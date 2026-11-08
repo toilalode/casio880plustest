@@ -1,0 +1,342 @@
+<!DOCTYPE html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="theme-color" content="#1b1c1f"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="fx-880BTG"><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="apple-touch-icon.png"><title>fx-880BTG PLUS</title>
+<style>
+:root{--bg:#d9d9dc;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root{--bg:#0e0e10}}
+html,body{margin:0;background:var(--bg);-webkit-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent}
+#d{width:100%;max-width:400px;margin:6px auto;background:#1b1c1f;border-radius:34px 34px 54px 54px;padding:18px 16px 26px;box-sizing:border-box;font-family:system-ui,sans-serif;color:#eee}
+.b1{font-weight:800;font-size:19px;letter-spacing:1px}.b2{font-size:11px;opacity:.8;margin-bottom:10px}
+#lw{container-type:inline-size;background:#2a2b2e;padding:9px;border-radius:8px}
+#lcd{background:#c4cdbb;color:#14180f;aspect-ratio:2.55;overflow:hidden;font-family:ui-monospace,Menlo,monospace;font-size:6.3cqw;line-height:1.2;padding:1cqw 2cqw;box-sizing:border-box;position:relative}
+#sb{font-size:3.4cqw;display:flex;gap:2cqw;border-bottom:1px solid #14180f55;margin-bottom:.6cqw}
+.cw{font-size:3cqw;text-align:right;letter-spacing:.7cqw;color:#2b3a2c;margin:6px 4px 0}
+.g{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5cqw;margin-top:1cqw}
+.c{text-align:center;font-size:4.6cqw;padding:.6cqw 0;line-height:1.15}.c i{font-style:normal;display:block;font-size:6cqw;font-weight:700}.c.s{background:#14180f;color:#c4cdbb}
+.m{white-space:nowrap;overflow:hidden}.m.s{background:#14180f;color:#c4cdbb}.r{text-align:right}.cur{border-left:2px solid #14180f;margin-left:-1px;animation:k 1s steps(1) infinite}@keyframes k{50%{border-color:transparent}}
+#t{position:relative;height:172px;width:340px;margin:14px auto 0}
+.k{position:absolute;transform:translate(-50%,-50%);border:0;border-radius:50%;background:#2b2c30;color:#eee;font-size:14px;width:38px;height:38px;padding:0;touch-action:manipulation;box-shadow:0 2px 0 #000}
+.k:active{filter:brightness(1.6)}.k.sh{background:#c9a24a;color:#222}.k.pill{width:40px;height:84px;border-radius:20px}
+.l{position:absolute;transform:translate(-50%,-50%);font-size:9px;font-weight:700;opacity:.85;pointer-events:none}
+.rw{display:grid;gap:8px 0;margin-top:16px;position:relative}.r6{grid-template-columns:repeat(6,1fr)}.r5{grid-template-columns:repeat(5,1fr)}
+.w{position:relative;display:flex;justify-content:center;padding-top:9px}.w small{position:absolute;top:-4px;left:calc(50% - 8px);transform:translateX(-100%);font-size:11px;color:#ffc94d;font-weight:800;white-space:nowrap;z-index:2;text-shadow:0 0 2px #000}
+.w button{border:0;border-radius:50%;background:#2b2c30;color:#eee;width:40px;height:40px;font-size:13px;padding:0;box-shadow:0 2px 0 #000;touch-action:manipulation}
+.r5 .w button{width:46px;height:46px;font-size:18px}.w button:active{filter:brightness(1.6)}
+.w button.ac{background:#3a3b40}.n{margin-top:12px;font-size:10px;opacity:.55;text-align:center}
+.gt{width:100%;border-collapse:collapse;table-layout:fixed;font-size:4.4cqw;line-height:1.1}.gt td,.gt th{border:1px solid #14180f88;padding:.1cqw .8cqw;white-space:nowrap;overflow:hidden;text-align:right}.gt th{background:#14180f22;text-align:center;font-weight:700}.gt td.h{background:#14180f22;text-align:center;width:11%}.gt td.s{background:#14180f;color:#c4cdbb}
+#pt{position:fixed;inset:0;z-index:50;background:#101114;color:#eee;display:flex;flex-direction:column;font-family:system-ui,sans-serif;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+.pth{display:flex;align-items:center;gap:10px;padding:10px 12px;background:#1b1c1f;font-size:14px}.pth #ptd{flex:1;font-size:12px;opacity:.85;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}.pth button{border:0;background:#2b2c30;color:#eee;border-radius:8px;padding:6px 12px;font-size:14px}
+.ptw{flex:1;overflow:auto;padding:10px;-webkit-overflow-scrolling:touch}
+.ptg{display:grid;grid-template-columns:repeat(18,64px);grid-template-rows:repeat(7,62px) 12px repeat(2,62px);gap:2px;width:max-content}
+.el{position:relative;border-radius:4px;border:1px solid #ffffff22;text-align:center;overflow:hidden;color:#f2f2f2;line-height:1}
+.el .zn{position:absolute;left:3px;top:2px;font-size:9px;opacity:.85}.el .am{position:absolute;right:3px;top:2px;font-size:8px;font-style:normal;opacity:.85}.el .sy{display:block;margin-top:14px;font-size:20px;font-weight:700}.el .nmx{display:block;font-size:8px;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;padding:0 1px}
+.el.mk{display:flex;align-items:center;justify-content:center;font-size:10px}
+.c-alk{background:#7a3b3b}.c-ae{background:#7a5a2b}.c-tm{background:#2f4f7a}.c-pt{background:#3b6a6a}.c-mt{background:#5a6a2f}.c-nm{background:#2f6a3f}.c-hl{background:#6a3f7a}.c-ng{background:#4a3f8a}.c-ln{background:#7a3b60}.c-ac{background:#8a4a3a}
+
+html,body{height:100%;overflow:hidden}#d{width:400px;max-width:none;position:absolute;left:50%;top:0;margin:6px 0 0;transform-origin:50% 0}
+.fr{display:inline-flex;flex-direction:column;vertical-align:middle;text-align:center;font-size:.85em;margin:0 .1em}.fr>span{padding:0 .15em;line-height:1.1}.fr>span:first-child{border-bottom:1px solid currentColor}
+sup{font-size:.6em;position:relative;top:-.55em;line-height:0}.rd{display:inline-flex}.rx{border-top:1px solid currentColor;padding:0 .1em}.bx{display:inline-block;width:.5em;height:.8em;border:1px dashed currentColor;vertical-align:middle}
+.pth{padding:4px 10px;font-size:13px;gap:8px}.pth button{padding:2px 10px}.ptw{flex:1;min-height:0;padding:4px;overflow:hidden}
+.ptg{container-type:size;width:100%;height:100%;display:grid;grid-template-columns:repeat(18,1fr);grid-template-rows:repeat(7,1fr) .3fr repeat(2,1fr);gap:2px}
+.el{display:flex;flex-direction:column;align-items:center;justify-content:center;min-width:0}.el .zn{left:2px;top:1px;font-size:.6cqw}.el .am{right:2px;top:1px;font-size:.5cqw}.el{padding:.5cqw 0 0;box-sizing:border-box}.el .sy{margin:0;font-size:1.9cqw}.el .nmx{font-size:.58cqw;margin:.15cqw 0 0;padding:0;max-width:100%;overflow:hidden;text-overflow:clip;line-height:1}.el.mk{font-size:.9cqw}
+.lg{grid-row:1;grid-column:3/18;display:flex;flex-wrap:wrap;gap:0 1.2cqw;align-content:center;font-size:.95cqw}.lg span{display:flex;align-items:center;gap:.3cqw;white-space:nowrap}.lg i{width:1.2cqw;height:1.2cqw;border-radius:2px}
+.inf{grid-row:2/4;grid-column:3/13;display:flex;align-items:center;gap:1.2cqw;font-size:1.2cqw;line-height:1.3;padding:0 1cqw;background:#ffffff0d;border-radius:6px}.it{flex:none;width:6.5cqw;height:90%;display:flex;flex-direction:column;align-items:center;justify-content:center;border-radius:4px}.it b{font-size:3cqw}.it small{font-size:.9cqw}.inf b.nm{font-size:2cqw}
+@container (max-width:600px){.el .nmx,.el .am{display:none}.el .sy{font-size:3.2cqw}.el .zn{font-size:1.6cqw}.lg{font-size:1.7cqw}.inf{font-size:1.8cqw}.it small{font-size:1.4cqw}.it b{font-size:4cqw}.inf b.nm{font-size:2.6cqw}}
+</style></head><body><div id="d"><div class="b1">CASIO</div><div class="b2">fx-880BTG PLUS</div>
+<div id="lw"><div id="lcd"></div></div><div class="cw">CLASSWIZ</div>
+<div id="t"></div><div id="kb"></div>
+<div class="n" id="nt"></div></div>
+<script>
+const $=q=>document.querySelector(q);
+const S={nm:0,nd:3,lang:0,sh:0,sto:0,off:0,ang:0,frac:1,V:{},Ans:0,pre:0,ex:"",pos:0,done:0,rs:"",st:[],scr:{t:"home",sel:0}};
+const sn=v=>String(v).replace("e","ᴇ");
+const F=n=>{if(n<0||n%1)throw 1;let r=1;for(let i=2;i<=n;i++)r*=i;return r};
+function ev(src,xv){src=src.replace(/⦃([^⦃⦄]*)⦄ᵐ⦃([^⦃⦄]*)⦄⁄⦃([^⦃⦄]*)⦄/g,"(($1)+($2)/($3))").replace(/⦃/g,"(").replace(/⦄/g,")").replace(/⁄/g,"/");
+ let s=src.replace(/PreAns/g,"("+sn(S.pre)+")").replace(/Ans/g,"("+sn(S.Ans)+")").replace(/π/g,"(PI)").replace(/\s/g,"");
+ s=s.replace(/([\d)])(?=[(a-zA-Z√³])/g,"$1*").replace(/\)(?=\d)/g,")*");
+ let i=0;const pk=()=>s[i],K=[Math.PI/180,1,Math.PI/200][S.ang],tr=a=>a*K,fr=a=>a/K;
+ function ex(){let v=tm();while(pk()=="+"||pk()=="-"){const o=s[i++],t=tm();v=o=="+"?v+t:v-t}return v}
+ function tm(){let v=un();for(;;){const o=pk();if(!"*/ᴘᴄᴍ".includes(o)||o===undefined)return v;i++;const t=un();
+  if(o=="*")v*=t;else if(o=="/")v/=t;else if(o=="ᴘ")v=F(v)/F(v-t);else if(o=="ᴄ")v=F(v)/(F(t)*F(v-t));else v=v-t*Math.floor(v/t)}}
+ function un(){if(pk()=="-"){i++;return-un()}if(pk()=="+"){i++;return un()}return pw()}
+ function pw(){const b=po();if(pk()=="^"){i++;return Math.pow(b,un())}return b}
+ function po(){let v=pr();while(pk()=="!"||pk()=="%"){v=s[i++]=="!"?F(v):v/100}return v}
+ function pr(){
+  if(pk()=="("){i++;const v=ex();if(pk()==")")i++;return v}
+  let m=s.slice(i).match(/^(asinh|acosh|atanh|ceil|int|sinh|cosh|tanh|floor|round|sign|asin|acos|atan|sin|cos|tan|log|ln|abs|³√|√|e\^|10\^)\(/);
+  if(m){i+=m[0].length;const a=ex();if(pk()==")")i++;
+   switch(m[1]){case"sin":return Math.sin(tr(a));case"cos":return Math.cos(tr(a));case"tan":return Math.tan(tr(a));case"asin":return fr(Math.asin(a));case"acos":return fr(Math.acos(a));case"atan":return fr(Math.atan(a));
+   case"log":return Math.log10(a);case"sinh":return Math.sinh(a);case"asinh":return Math.asinh(a);case"acosh":return Math.acosh(a);case"atanh":return Math.atanh(a);case"ceil":return Math.ceil(a);case"int":return Math.trunc(a);case"cosh":return Math.cosh(a);case"tanh":return Math.tanh(a);case"floor":return Math.floor(a);case"round":return Math.round(a);case"sign":return Math.sign(a);case"ln":return Math.log(a);case"abs":return Math.abs(a);case"√":if(a<0)throw 1;return Math.sqrt(a);case"³√":return Math.cbrt(a);case"e^":return Math.exp(a);default:return Math.pow(10,a)}}
+  m=s.slice(i).match(/^(\d+\.?\d*|\.\d+)(ᴇ[+-]?\d+)?/);if(m){i+=m[0].length;return parseFloat(m[0].replace("ᴇ","e"))}
+  if(s.startsWith("PI",i)){i+=2;return Math.PI}
+  const c=pk();if(c=="e"){i++;return Math.E}
+  if(c&&/[A-Fxyz]/.test(c)){i++;return c=="x"&&xv!==undefined?xv:(S.V[c]||0)}
+  throw 0}
+ const v=ex();if(i<s.length)throw 0;if(!isFinite(v))throw 1;return v}
+function fmt(v,f){if(Math.abs(v)<1e-13)v=0;const rv=Math.round(v);if(Math.abs(v-rv)<1e-11*Math.max(1,Math.abs(v)))v=rv;
+ if(S.frac&&f!==0&&v%1){const a=Math.abs(v);let h1=1,h0=0,k1=0,k0=1,x=a;for(let n=0;n<20;n++){const q=Math.floor(x);[h1,h0]=[q*h1+h0,h1];[k1,k0]=[q*k1+k0,k1];if(Math.abs(a-h1/k1)<1e-11*a||k1>999)break;x=1/(x-q)}
+  if(k1<=999&&Math.abs(a-h1/k1)<1e-10*a)return(v<0?"-":"")+h1+"/"+k1}
+ if(S.nm==1)return v.toFixed(S.nd);if(S.nm==2)return v.toExponential(S.nd).replace("e+","×10^").replace("e","×10^");const r=+v.toPrecision(10);return(Math.abs(r)>=1e10||(r&&Math.abs(r)<1e-9))?r.toExponential().replace("e+","×10^").replace("e","×10^"):String(r)}
+const disp=t=>t.replace(/\*/g,"×").replace(/\//g,"÷").replace(/ᴘ/g,"P").replace(/ᴄ/g,"C").replace(/ᴍ/g,"Mod").replace(/ᴇ/g,"E").replace(/</g,"&lt;");
+// math libs
+function gauss(M){const n=M.length;for(let i=0;i<n;i++){let p=i;for(let r=i+1;r<n;r++)if(Math.abs(M[r][i])>Math.abs(M[p][i]))p=r;if(Math.abs(M[p][i])<1e-12)throw 1;[M[i],M[p]]=[M[p],M[i]];for(let r=0;r<n;r++)if(r!=i){const f=M[r][i]/M[i][i];for(let c=i;c<=n;c++)M[r][c]-=f*M[i][c]}}return M.map((r,i)=>r[n]/r[i])}
+const cm=(p,q)=>[p[0]*q[0]-p[1]*q[1],p[0]*q[1]+p[1]*q[0]],cs=(p,q)=>[p[0]-q[0],p[1]-q[1]],cd=(p,q)=>{const d=q[0]*q[0]+q[1]*q[1];return[(p[0]*q[0]+p[1]*q[1])/d,(p[1]*q[0]-p[0]*q[1])/d]};
+function roots(c){const n=c.length-1;if(!c[0])throw 1;const a=c.map(v=>v/c[0]);let z=[],w=[1,0];for(let k=0;k<n;k++){z.push(w);w=cm(w,[.4,.9])}
+ for(let it=0;it<400;it++)for(let k=0;k<n;k++){let p=[1,0];for(let j=1;j<=n;j++)p=cm(p,z[k]),p[0]+=a[j];let d=[1,0];for(let j=0;j<n;j++)if(j!=k)d=cm(d,cs(z[k],z[j]));z[k]=cs(z[k],cd(p,d))}
+ return z.map(q=>[Math.abs(q[0])<1e-7?0:q[0],Math.abs(q[1])<1e-7?0:q[1]])}
+function erfc(x){if(x<0)return 2-erfc(-x);if(x<3){let t=x,s=x;for(let n=1;n<90;n++){t*=-x*x/n;s+=t/(2*n+1)}return 1-2/Math.sqrt(Math.PI)*s}let t=x;for(let k=60;k>=1;k--)t=x+k/2/t;return Math.exp(-x*x)/(Math.sqrt(Math.PI)*t)}
+const Phi=z=>.5*erfc(-z/Math.SQRT2),lf=n=>{let s=0;for(let i=2;i<=n;i++)s+=Math.log(i);return s};
+const bp=(n,p,k)=>k<0||k>n?0:Math.exp(lf(n)-lf(k)-lf(n-k)+(k?k*Math.log(p):0)+(n-k?(n-k)*Math.log(1-p):0)),pp=(l,k)=>k<0?0:Math.exp(-l+k*Math.log(l)-lf(k));
+const sum=(f,k)=>{let s=0;for(let i=0;i<=k;i++)s+=f(i);return s};
+const num=e=>ev(e),list=t=>t.split(",").filter(x=>x.trim()).map(num);
+// screens
+const fm=(title,names,run,raw)=>({t:"form",title,f:names.map(n=>({n,v:""})),i:0,run,raw});
+const UN=n=>({t:"out",lines:[n,"Chưa triển khai"],top:0});
+const APPS=[["Calculate","×÷"],["Statistics","▮▮"],["Distribution","⌒"],["Spreadsheet","▦"],["Table","▤"],["Equation","xy=0"],["Inequality","≤"],["Complex","ℂ"],["Base-N","₂"],["Matrix","[ ]"],["Vector","→"],["Ratio","a:b"],["Math Box","⚄"],["MathExplorer","△"]];
+const menu=(title,items)=>({t:"menu",title,items,sel:0});
+function rt(z){return fmt(z[0],0)+(z[1]?(z[1]>0?"+":"")+fmt(z[1],0)+"i":"")}
+const poly=n=>fm("Bậc "+n,"abcde".slice(0,n+1).split("").map(c=>c+"="),v=>{const r=roots(v);return r.map((q,i)=>"x"+(i+1)+"="+rt(q))});
+const cr=(u,v)=>[u[1]*v[2]-u[2]*v[1],u[2]*v[0]-u[0]*v[2],u[0]*v[1]-u[1]*v[0]],nm=v=>Math.hypot(...v),sb=(p,q)=>p.map((x,i)=>x-q[i]),dt=(p,q)=>p.reduce((s,x,i)=>s+x*q[i],0),ok=x=>{if(!isFinite(x))throw 1;return x};
+function ineq(c,op){const ph=x=>c.reduce((s,a)=>s*x+a,0);const r=roots(c).filter(q=>Math.abs(q[1])<1e-6).map(q=>q[0]).sort((a,b)=>a-b).filter((x,i,a)=>!i||Math.abs(x-a[i-1])>1e-6);
+ const P=[-Infinity,...r,Infinity],cl=op>=3,o=[];
+ for(let i=0;i<P.length-1;i++){const a=P[i],b=P[i+1],t=a==-Infinity?(b==Infinity?0:b-1):b==Infinity?a+1:(a+b)/2,v=ph(t);if(op==1||op==3?v>0:v<0)o.push((a==-Infinity?"(-∞":((cl?"[":"(")+fmt(a,0)))+";"+(b==Infinity?"+∞)":fmt(b,0)+(cl?"]":")")))}
+ if(cl&&!o.length)r.forEach(x=>o.push("x="+fmt(x,0)));
+ return o.length?o:["Vô nghiệm"]}
+
+const Kd=()=>[Math.PI/180,1,Math.PI/200][S.ang],out=l=>({t:"out",lines:l,top:0}),rnd=n=>Math.floor(Math.random()*n);
+const EN=[["Chưa triển khai","Not implemented"],["Lỗi cú pháp","Syntax ERROR"],["Lỗi toán","Math ERROR"],["Thống kê 1 biến","1-Variable Stats"],["Thống kê ghép nhóm","Grouped stats"],["Thống kê","Statistics"],["Ghép nhóm","Grouped"],["1 biến","1-Var"],["Lớp mốt","Modal class"],["Tần số","Freq"],["Hệ 2 ẩn","2 unknowns"],["Hệ 3 ẩn","3 unknowns"],["2 ẩn","2 unknowns"],["3 ẩn","3 unknowns"],["BPT bậc ","Inequality deg "],["Bậc ","Degree "],["Vô nghiệm","No solution"],["Nhập ","Enter "],["Hình quạt","Sector"],["Tam giác SSS","Triangle SSS"],["Khoảng cách 2 điểm","Distance A-B"],["Điểm–đường thẳng","Point-line dist."],["Mặt phẳng 3 điểm","Plane (3 pts)"],["Mặt phẳng ABC","Plane ABC"],["XS toàn phần/Bayes","Bayes"],["Hằng số","Constants"],["θ(độ):","θ(deg):"],["Bảng tuần hoàn","Periodic table"],["Z hoặc ký hiệu:","Z or symbol:"],["Chu kỳ","Period"],["Cận a0,a1,..:","Bounds a0,a1,..:"],["Tam giác SAS","Triangle SAS"],["Tam giác Oxy","Triangle Oxy"],["Đường tròn 3 điểm","Circle (3 pts)"],["Điểm–mặt phẳng","Point-plane dist."],["Hai đường chéo nhau","Skew lines dist."],["Góc đường thẳng–mặt phẳng","Line-plane angle"],["Góc đường–mặt","Line-plane angle"],["Thể tích tứ diện","Tetrahedron"],["Tứ diện","Tetrahedron"],["Khối cầu","Sphere"],["Khối nón","Cone"],["Khối trụ","Cylinder"],["Đổi đơn vị","Unit conversion"],["Giá trị:","Value:"],["Vế trái:","Left:"],["Vế phải:","Right:"],["ĐÚNG","TRUE"],["SAI","FALSE"],["Thừa số nguyên tố","Prime factors"],["Số nguyên tố","Prime"],["Hợp số","Composite"],["ƯCLN","GCD"],["BCNN","LCM"],["Gieo xúc xắc","Roll dice"],["Số xúc xắc","Dice"],["Số lần","Trials"],["Tung đồng xu","Toss coins"],["Số đồng xu","Coins"],["ngửa","heads"],["Số ngẫu nhiên","Random integer"],["Số phức","Complex"],["Nghịch đảo","Inverse"],["Tích vô hướng","Dot product"],["Tích có hướng","Cross product"],["Độ dài","Length"],["Góc a,b","Angle a,b"],["Lần 1","Throw 1"],["Tổng ","Sum "]];
+const TT=h=>(S.lang?EN:VN).reduce((a,[v,e])=>a.split(v).join(e),h);
+const SS=()=>fm("Spreadsheet",["A:","B:","C(x=A,y=B):"],(v,r)=>{const A=list(r[0]),B=r[1].trim()?list(r[1]):A.map(()=>0);if(!A.length||A.length!=B.length||!r[2].trim())throw 0;const y0=S.V.y;let C;try{C=A.map((a,k)=>{S.V.y=B[k];return ev(r[2],a)})}finally{S.V.y=y0}const s=C.reduce((a,b)=>a+b,0);return[...C.map((c,k)=>(k+1)+": "+fmt(A[k],0)+" | "+fmt(B[k],0)+" | "+fmt(c,0)),"ΣC="+fmt(s),"TB C="+fmt(s/C.length)]},[0,1,2]);
+const CX=()=>fm("Số phức z=a+bi w=c+di",["a:","b:","c:","d:"],v=>{const z=[v[0],v[1]],w=[v[2],v[3]],q=cd(z,w);if(!isFinite(q[0]+q[1]))throw 1;return["z+w="+rt([z[0]+w[0],z[1]+w[1]]),"z−w="+rt(cs(z,w)),"z×w="+rt(cm(z,w)),"z÷w="+rt(q),"|z|="+fmt(Math.hypot(...z),0),"arg z="+fmt(Math.atan2(z[1],z[0])/Kd(),0)]});
+const M4=["a11:","a12:","a21:","a22:"],MX=[["det 2×2",()=>fm("det 2×2",M4,v=>["det="+fmt(v[0]*v[3]-v[1]*v[2])])],
+["det 3×3",()=>fm("det 3×3","abcdefghi".split("").map(c=>c+":"),v=>["det="+fmt(v[0]*(v[4]*v[8]-v[5]*v[7])-v[1]*(v[3]*v[8]-v[5]*v[6])+v[2]*(v[3]*v[7]-v[4]*v[6]))])],
+["Nghịch đảo 2×2",()=>fm("Nghịch đảo 2×2",M4,v=>{const d=v[0]*v[3]-v[1]*v[2];if(!d)throw 1;return["["+fmt(v[3]/d)+" "+fmt(-v[1]/d)+"]","["+fmt(-v[2]/d)+" "+fmt(v[0]/d)+"]"]})],
+["A×B 2×2",()=>fm("A×B 2×2",M4.concat(["b11:","b12:","b21:","b22:"]),v=>["["+fmt(v[0]*v[4]+v[1]*v[6])+" "+fmt(v[0]*v[5]+v[1]*v[7])+"]","["+fmt(v[2]*v[4]+v[3]*v[6])+" "+fmt(v[2]*v[5]+v[3]*v[7])+"]"])]];
+const V6=["ax:","ay:","az:","bx:","by:","bz:"],sp=v=>[v.slice(0,3),v.slice(3)],VC=[["Tích vô hướng",()=>fm("Tích vô hướng",V6,v=>["a·b="+fmt(dt(...sp(v)))])],
+["Tích có hướng",()=>fm("Tích có hướng",V6,v=>{const c=cr(...sp(v));return["x="+fmt(c[0]),"y="+fmt(c[1]),"z="+fmt(c[2])]})],
+["Độ dài |a|",()=>fm("Độ dài |a|",["ax:","ay:","az:"],v=>["|a|="+fmt(nm(v))])],
+["Góc a,b",()=>fm("Góc a,b",V6,v=>{const[a,b]=sp(v);return["θ="+fmt(ok(Math.acos(dt(a,b)/(nm(a)*nm(b))))/Kd(),0)]})]];
+const MB=[["Gieo xúc xắc",()=>fm("Gieo xúc xắc",["Số xúc xắc 1-3:","Số lần:"],v=>{const n=Math.min(3,Math.max(1,v[0]|0)),t=Math.min(1e5,Math.max(1,v[1]|0)),f={};let first="";for(let i=0;i<t;i++){let s=0,l=[];for(let j=0;j<n;j++){const d=rnd(6)+1;s+=d;l.push(d)}f[s]=(f[s]||0)+1;if(!i)first=l.join(",")}return["Lần 1: "+first,...Object.keys(f).map(Number).sort((a,b)=>a-b).map(k=>"Tổng "+k+": "+f[k]+" ("+fmt(f[k]/t*100,0)+"%)")]})],
+["Tung đồng xu",()=>fm("Tung đồng xu",["Số đồng xu 1-3:","Số lần:"],v=>{const n=Math.min(3,Math.max(1,v[0]|0)),t=Math.min(1e5,Math.max(1,v[1]|0)),f=Array(n+1).fill(0);for(let i=0;i<t;i++){let h=0;for(let j=0;j<n;j++)h+=rnd(2);f[h]++}return f.map((c,k)=>k+" ngửa: "+c+" ("+fmt(c/t*100,0)+"%)")})],
+["Số ngẫu nhiên",()=>fm("Số ngẫu nhiên",["Min:","Max:"],v=>{if(v[1]<v[0])throw 1;return[String(v[0]+rnd(v[1]-v[0]+1))]})],
+["Ran#",()=>out([0,1,2].map(()=>"Ran#="+Math.random().toFixed(3)))]];
+const FX=()=>fm("f(x)",["f(x)=","x="],(v,r)=>{S.fx=r[0];return["f("+fmt(v[1],0)+")="+fmt(ev(r[0],v[1]))]},[0]);
+const CONST=()=>out(["c=299792458 m·s⁻¹","h=6.62607015×10^-34","e=1.602176634×10^-19","NA=6.02214076×10^23","k=1.380649×10^-23","G=6.6743×10^-11","g=9.80665","R=8.314462618","me=9.1093837×10^-31","mp=1.67262192×10^-27","ε0=8.8541878×10^-12","μ0=1.25663706×10^-6","atm=101325 Pa"]);
+const UC=(n,a,b,f,g)=>[n,()=>fm(n,["Giá trị:"],v=>[fmt(v[0],0)+" "+a+" = "+fmt(f(v[0]))+" "+b,fmt(v[0],0)+" "+b+" = "+fmt(g(v[0]))+" "+a])],
+UL=[UC("km↔mi","km","mi",x=>x/1.609344,x=>x*1.609344),UC("m↔ft","m","ft",x=>x/.3048,x=>x*.3048),UC("kg↔lb","kg","lb",x=>x/.45359237,x=>x*.45359237),UC("°C↔°F","°C","°F",x=>x*9/5+32,x=>(x-32)*5/9),UC("L↔gal","L","gal",x=>x/3.785411784,x=>x*3.785411784),UC("km·h⁻¹↔m·s⁻¹","km·h⁻¹","m·s⁻¹",x=>x/3.6,x=>x*3.6)];
+const TL=[["Hằng số",()=>CSTC()],["Đổi đơn vị",()=>CONVC()],["Verify",()=>fm("Verify",["Vế trái:","Vế phải:"],(v,r)=>{const a=ev(r[0]),b=ev(r[1]);return[Math.abs(a-b)<=1e-9*Math.max(1,Math.abs(a))?"ĐÚNG":"SAI"]},[0,1])],
+["Bảng tuần hoàn",()=>PT()],["Thừa số nguyên tố",()=>fm("Thừa số nguyên tố",["n:"],v=>{let n=v[0];if(n<2||n%1||n>1e12)throw 1;const o=[];for(let p=2;p*p<=n;p++){let c=0;while(n%p==0){n/=p;c++}if(c)o.push(p+(c>1?"^"+c:""))}if(n>1)o.push(String(n));return[o.join("×"),o.length==1&&!o[0].includes("^")?"Số nguyên tố":"Hợp số"]})],
+["ƯCLN/BCNN",()=>fm("ƯCLN BCNN",["a:","b:"],v=>{let[a,b]=v.map(x=>Math.abs(x));if(a%1||b%1)throw 1;const p=a*b;while(b)[a,b]=[b,a%b];return["ƯCLN="+a,"BCNN="+(a?p/a:0)]})]];
+const GS=()=>fm("Thống kê ghép nhóm",["Cận a0,a1,..:","Tần số:"],(v,r)=>{const b=list(r[0]),f=list(r[1]),k=f.length;if(k<1||b.length!=k+1)throw 0;for(let i=0;i<k;i++)if(!(b[i+1]>b[i])||f[i]<0)throw 1;const n=f.reduce((a,c)=>a+c,0);if(n<=0)throw 1;const m=f.map((c,i)=>(b[i]+b[i+1])/2),mu=m.reduce((a,x,i)=>a+x*f[i],0)/n,sg=Math.sqrt(Math.max(0,m.reduce((a,x,i)=>a+x*x*f[i],0)/n-mu*mu)),q=p=>{let c=0,t=p*n;for(let i=0;i<k;i++){if(c+f[i]>=t&&f[i]>0)return b[i]+(t-c)/f[i]*(b[i+1]-b[i]);c+=f[i]}return b[k]},j=f.indexOf(Math.max(...f)),d1=f[j]-(f[j-1]||0),d2=f[j]-(f[j+1]||0);if(d1+d2==0)throw 1;return["n="+fmt(n),"x̄="+fmt(mu),"σ="+fmt(sg),"s="+fmt(n>1?sg*Math.sqrt(n/(n-1)):0),"Q1="+fmt(q(.25)),"Me="+fmt(q(.5)),"Q3="+fmt(q(.75)),"Mo="+fmt(b[j]+d1/(d1+d2)*(b[j+1]-b[j])),"Lớp mốt: ["+fmt(b[j],0)+";"+fmt(b[j+1],0)+")"]});
+const D2=(p,q)=>Math.hypot(p[0]-q[0],p[1]-q[1]),tri=(P,Q,R)=>nm(cr(sb(Q,P),sb(R,P)))/2;
+const GEO=[["Tam giác SAS",()=>fm("Tam giác SAS",["a:","b:","C:"],v=>{const C=v[2]*Kd(),c=Math.sqrt(v[0]*v[0]+v[1]*v[1]-2*v[0]*v[1]*Math.cos(C));ok(c);const A=Math.acos((v[1]*v[1]+c*c-v[0]*v[0])/(2*v[1]*c))/Kd(),B=Math.acos((v[0]*v[0]+c*c-v[1]*v[1])/(2*v[0]*c))/Kd();return["c="+fmt(c),"A="+fmt(ok(A),0),"B="+fmt(ok(B),0),"S="+fmt(.5*v[0]*v[1]*Math.sin(C))]})],
+["Tam giác Oxy",()=>fm("Tam giác Oxy",["xA:","yA:","xB:","yB:","xC:","yC:"],v=>{const A=v.slice(0,2),B=v.slice(2,4),C=v.slice(4),a=D2(B,C),b=D2(A,C),c=D2(A,B),S=Math.abs((B[0]-A[0])*(C[1]-A[1])-(C[0]-A[0])*(B[1]-A[1]))/2;if(!S)throw 1;return["AB="+fmt(c),"BC="+fmt(a),"CA="+fmt(b),"S="+fmt(S),"G=("+fmt((A[0]+B[0]+C[0])/3)+";"+fmt((A[1]+B[1]+C[1])/3)+")","R="+fmt(a*b*c/(4*S)),"r="+fmt(S/((a+b+c)/2))]})],
+["Đường tròn 3 điểm",()=>fm("Đường tròn 3 điểm",["xA:","yA:","xB:","yB:","xC:","yC:"],v=>{const[x1,y1,x2,y2,x3,y3]=v,d=2*(x1*(y2-y3)+x2*(y3-y1)+x3*(y1-y2));if(!d)throw 1;const s1=x1*x1+y1*y1,s2=x2*x2+y2*y2,s3=x3*x3+y3*y3,ux=(s1*(y2-y3)+s2*(y3-y1)+s3*(y1-y2))/d,uy=(s1*(x3-x2)+s2*(x1-x3)+s3*(x2-x1))/d;return["I=("+fmt(ux)+";"+fmt(uy)+")","R="+fmt(Math.hypot(x1-ux,y1-uy))]})],
+["Điểm–mặt phẳng",()=>fm("Điểm–mặt phẳng",["xM:","yM:","zM:","a:","b:","c:","d:"],v=>["d="+fmt(ok(Math.abs(v[3]*v[0]+v[4]*v[1]+v[5]*v[2]+v[6])/nm(v.slice(3,6))))])],
+["Hai đường chéo nhau",()=>fm("Hai đường chéo nhau",["xA:","yA:","zA:","ux:","uy:","uz:","xB:","yB:","zB:","vx:","vy:","vz:"],v=>{const A=v.slice(0,3),u=v.slice(3,6),B=v.slice(6,9),w=v.slice(9),n=cr(u,w);if(nm(n)<1e-12)throw 1;return["d="+fmt(Math.abs(dt(sb(B,A),n))/nm(n))]})],
+["Góc đường thẳng–mặt phẳng",()=>fm("Góc đường–mặt",["ux:","uy:","uz:","nx:","ny:","nz:"],v=>{const[u,n]=sp(v);return["θ="+fmt(ok(Math.asin(Math.abs(dt(u,n))/(nm(u)*nm(n))))/Kd(),0)]})],
+["Thể tích tứ diện",()=>fm("Tứ diện ABCD",["xA:","yA:","zA:","xB:","yB:","zB:","xC:","yC:","zC:","xD:","yD:","zD:"],v=>{const[A,B,C,D]=[0,3,6,9].map(i=>v.slice(i,i+3));return["V="+fmt(Math.abs(dt(sb(B,A),cr(sb(C,A),sb(D,A))))/6),"Stp="+fmt(tri(A,B,C)+tri(A,B,D)+tri(A,C,D)+tri(B,C,D))]})],
+["Khối cầu",()=>fm("Khối cầu",["r:"],v=>["V="+fmt(4/3*Math.PI*v[0]**3,0),"S="+fmt(4*Math.PI*v[0]**2,0)])],
+["Khối nón",()=>fm("Khối nón",["r:","h:"],v=>{const l=Math.hypot(v[0],v[1]);return["V="+fmt(Math.PI*v[0]**2*v[1]/3,0),"Sxq="+fmt(Math.PI*v[0]*l,0),"Stp="+fmt(Math.PI*v[0]*(l+v[0]),0)]})],
+["Khối trụ",()=>fm("Khối trụ",["r:","h:"],v=>["V="+fmt(Math.PI*v[0]**2*v[1],0),"Sxq="+fmt(2*Math.PI*v[0]*v[1],0),"Stp="+fmt(2*Math.PI*v[0]*(v[1]+v[0]),0)])]];
+const VN=[["Calculate","Tính toán"],["Statistics","Thống kê"],["Distribution","Phân phối"],["Spreadsheet","Bảng tính"],["Table","Bảng số"],["Equation","Giải PT"],["Inequality","Bất PT"],["Complex","Số phức"],["Base-N","Cơ số N"],["MathExplorer","Khám phá"],["Math Box","Hộp toán"],["Matrix","Ma trận"],["Vector","Vectơ"],["Ratio","Tỉ lệ"],["Angle: Degree","Góc: Độ"],["Angle: Radian","Góc: Radian"],["Angle: Gradian","Góc: Grad"],["Output: Math","Kết quả: Toán"],["Output: Decimal","Kết quả: Thập phân"],["Abs","Trị tuyệt đối"],["Floor","Phần nguyên"],["Round","Làm tròn"],["Sign","Dấu"],["Normal CD","Chuẩn CD"],["Binomial PD","Nhị thức PD"],["Binomial CD","Nhị thức CD"],["Min:","Nhỏ nhất:"],["Max:","Lớn nhất:"],["Start:","Bắt đầu:"],["End:","Kết thúc:"],["Step:","Bước:"],["Lower:","Cận dưới:"],["Upper:","Cận trên:"],["Verify","Kiểm tra"],["Ceil","Làm tròn lên"],["Int","Cắt phần nguyên"]];
+const PS="H He Li Be B C N O F Ne Na Mg Al Si P S Cl Ar K Ca Sc Ti V Cr Mn Fe Co Ni Cu Zn Ga Ge As Se Br Kr Rb Sr Y Zr Nb Mo Tc Ru Rh Pd Ag Cd In Sn Sb Te I Xe Cs Ba La Ce Pr Nd Pm Sm Eu Gd Tb Dy Ho Er Tm Yb Lu Hf Ta W Re Os Ir Pt Au Hg Tl Pb Bi Po At Rn Fr Ra Ac Th Pa U Np Pu Am Cm Bk Cf Es Fm Md No Lr Rf Db Sg Bh Hs Mt Ds Rg Cn Nh Fl Mc Lv Ts Og".split(" "),
+PM=[1.008,4.0026,6.94,9.0122,10.81,12.011,14.007,15.999,18.998,20.180,22.990,24.305,26.982,28.085,30.974,32.06,35.45,39.948,39.098,40.078,44.956,47.867,50.942,51.996,54.938,55.845,58.933,58.693,63.546,65.38,69.723,72.630,74.922,78.971,79.904,83.798,85.468,87.62,88.906,91.224,92.906,95.95,98,101.07,102.91,106.42,107.87,112.41,114.82,118.71,121.76,127.60,126.90,131.29,132.91,137.33,138.91,140.12,140.91,144.24,145,150.36,151.96,157.25,158.93,162.50,164.93,167.26,168.93,173.05,174.97,178.49,180.95,183.84,186.21,190.23,192.22,195.08,196.97,200.59,204.38,207.2,208.98,209,210,222,223,226,227,232.04,231.04,238.03,237,244,243,247,247,251,252,257,258,259,266,267,268,269,270,277,278,281,282,285,286,289,290,293,294,294],
+PEN="Hydrogen,Helium,Lithium,Beryllium,Boron,Carbon,Nitrogen,Oxygen,Fluorine,Neon,Sodium,Magnesium,Aluminium,Silicon,Phosphorus,Sulfur,Chlorine,Argon,Potassium,Calcium,Scandium,Titanium,Vanadium,Chromium,Manganese,Iron,Cobalt,Nickel,Copper,Zinc,Gallium,Germanium,Arsenic,Selenium,Bromine,Krypton,Rubidium,Strontium,Yttrium,Zirconium,Niobium,Molybdenum,Technetium,Ruthenium,Rhodium,Palladium,Silver,Cadmium,Indium,Tin,Antimony,Tellurium,Iodine,Xenon,Caesium,Barium,Lanthanum,Cerium,Praseodymium,Neodymium,Promethium,Samarium,Europium,Gadolinium,Terbium,Dysprosium,Holmium,Erbium,Thulium,Ytterbium,Lutetium,Hafnium,Tantalum,Tungsten,Rhenium,Osmium,Iridium,Platinum,Gold,Mercury,Thallium,Lead,Bismuth,Polonium,Astatine,Radon,Francium,Radium,Actinium,Thorium,Protactinium,Uranium,Neptunium,Plutonium,Americium,Curium,Berkelium,Californium,Einsteinium,Fermium,Mendelevium,Nobelium,Lawrencium,Rutherfordium,Dubnium,Seaborgium,Bohrium,Hassium,Meitnerium,Darmstadtium,Roentgenium,Copernicium,Nihonium,Flerovium,Moscovium,Livermorium,Tennessine,Oganesson".split(","),
+PVI="Hiđro,Heli,Liti,Beri,Bo,Cacbon,Nitơ,Oxi,Flo,Neon,Natri,Magie,Nhôm,Silic,Photpho,Lưu huỳnh,Clo,Agon,Kali,Canxi,Scandi,Titan,Vanadi,Crom,Mangan,Sắt,Coban,Niken,Đồng,Kẽm,Gali,Gecmani,Asen,Selen,Brom,Kripton,Rubidi,Stronti,Ytri,Zirconi,Niobi,Molipđen,Tecneti,Ruteni,Rodi,Paladi,Bạc,Cadimi,Inđi,Thiếc,Antimon,Telu,Iot,Xenon,Xesi,Bari,Lantan,Xeri,Prazeodim,Neodim,Prometi,Samari,Europi,Gadolini,Tecbi,Dysprosi,Honmi,Ecbi,Tuli,Ytecbi,Lutexi,Hafni,Tantan,Vonfram,Reni,Osmi,Iridi,Platin,Vàng,Thủy ngân,Tali,Chì,Bitmut,Poloni,Atatin,Radon,Franxi,Radi,Actini,Thori,Protactini,Urani,Neptuni,Plutoni,Ameri,Curi,Beckeli,Californi,Einsteini,Fermi,Mendelevi,Nobeli,Lawrenxi,Rutherfordi,Dubni,Seaborgi,Bohri,Hassi,Meitneri,Darmstadti,Roentgeni,Copernixi,Nihoni,Flerovi,Moscovi,Livermori,Tennessin,Oganesson".split(",");
+const CK=[["mp","KL proton","Proton mass",1.67262192369,-27],["mn","KL nơtron","Neutron mass",1.67492749804,-27],["me","KL electron","Electron mass",9.1093837015,-31],["mμ","KL muon","Muon mass",1.883531627,-28],["a0","Bán kính Bohr","Bohr radius",5.29177210903,-11],["h","Planck","Planck",6.62607015,-34],["μN","Manheton h.nhân","Nuclear magn.",5.0507837461,-27],["μB","Manheton Bohr","Bohr magneton",9.2740100783,-24],["ħ","Planck rút gọn","Reduced Planck",1.054571817,-34],["α","Cấu trúc tinh tế","Fine structure",7.2973525693,-3],["re","BK electron","Class. e radius",2.8179403262,-15],["λc","Compton","Compton wavel.",2.42631023867,-12],["γp","Hồi chuyển p","Proton gyromag.",2.6752218744,8],["λcp","Compton proton","Compton proton",1.32140985539,-15],["λcn","Compton nơtron","Compton neutron",1.31959090581,-15],["R∞","Rydberg","Rydberg",1.097373156816,7],["u","ĐV khối lượng NT","Atomic mass unit",1.6605390666,-27],["μp","Mômen từ proton","Proton mag.mom.",1.41060679736,-26],["μe","Mômen từ electron","Electron mag.mom.",-9.2847647043,-24],["μn","Mômen từ nơtron","Neutron mag.mom.",-9.6623651,-27],["μμ","Mômen từ muon","Muon mag.mom.",-4.4904483,-26],["F","Faraday","Faraday",9.648533212,4],["e","Điện tích e","Elem. charge",1.602176634,-19],["NA","Avogadro","Avogadro",6.02214076,23],["k","Boltzmann","Boltzmann",1.380649,-23],["Vm","Thể tích mol","Molar volume",2.24139695,-2],["R","Hằng số khí","Gas constant",8.314462618,0],["c0","Tốc độ ánh sáng","Speed of light",2.99792458,8],["c1","Bức xạ thứ nhất","1st radiation",3.741771852,-16],["c2","Bức xạ thứ hai","2nd radiation",1.438776877,-2],["σ","Stefan-Boltzmann","Stefan-Boltzmann",5.670374419,-8],["ε0","Hằng số điện","Permittivity",8.8541878128,-12],["μ0","Hằng số từ","Permeability",1.25663706212,-6],["Φ0","Lượng tử từ thông","Flux quantum",2.067833848,-15],["g","Gia tốc rơi tự do","Std gravity",9.80665,0],["G0","Lượng tử dẫn","Conduct. quantum",7.748091729,-5],["Z0","Trở kháng ch.không","Vacuum impedance",3.76730313668,2],["t","Nhiệt độ Celsius","Celsius temp",2.7315,2],["G","Hấp dẫn","Gravitation",6.6743,-11],["atm","Áp suất chuẩn","Std atmosphere",1.01325,5]];
+const CATL=()=>[["Abs","abs("],["i","i"],["Arg","arg("],["Conj","conj("],["Re","Re("],["Im","Im("],["acos","acos("],["acosh","acosh("],["Ans","Ans"],["asin","asin("],["asinh","asinh("],["atan","atan("],["atanh","atanh("],["Ceil","ceil("],["cos","cos("],["cosh","cosh("],["e","e"],["eˣ","e^⦃⦄"],["Floor","floor("],["Int","int("],["ln","ln("],["log","log("],["Mod","ᴍ"],["nCr","ᴄ"],["nPr","ᴘ"],["PreAns","PreAns"],["Ran#",()=>String(+Math.random().toFixed(3))],["Round","round("],["Sign","sign("],["sin","sin("],["sinh","sinh("],["tan","tan("],["tanh","tanh("],["10ˣ","10^⦃⦄"],["x!","!"],["x²","^⦃2⦄"],["x³","^⦃3⦄"],["x⁻¹","^⦃-1⦄"],["√","√⦃⦄"],["³√","³√⦃⦄"],["π","π"],["%","%"]];
+const CSTL=()=>CK.map(c=>[c[0]+" "+(S.lang?c[2]:c[1]),"("+c[3]+"*10^("+c[4]+"))"]);
+const CST2=()=>out(CK.map(c=>c[0]+"="+c[3]+"×10^"+c[4]+" "+(S.lang?c[2]:c[1])));
+const PCAT=z=>[3,11,19,37,55,87].includes(z)?"alk":[4,12,20,38,56,88].includes(z)?"ae":[5,14,32,33,51,52,84].includes(z)?"mt":[9,17,35,53,85,117].includes(z)?"hl":[2,10,18,36,54,86,118].includes(z)?"ng":[1,6,7,8,15,16,34].includes(z)?"nm":z>=57&&z<=71?"ln":z>=89&&z<=103?"ac":[13,31,49,50,81,82,83,113,114,115,116].includes(z)?"pt":"tm";
+const PPOS=z=>z==1?[1,1]:z==2?[1,18]:z<=4?[2,z-2]:z<=10?[2,z+8]:z<=12?[3,z-10]:z<=18?[3,z]:z<=36?[4,z-18]:z<=54?[5,z-36]:z<=56?[6,z-54]:z<=71?[9,z-54]:z<=86?[6,z-68]:z<=88?[7,z-86]:z<=103?[10,z-86]:[7,z-100];
+const LEG=[["alk","Kim loại kiềm","Alkali metal"],["ae","Kiềm thổ","Alkaline earth"],["tm","KL chuyển tiếp","Transition metal"],["pt","KL sau chuyển tiếp","Post-transition"],["mt","Á kim","Metalloid"],["nm","Phi kim","Nonmetal"],["hl","Halogen","Halogen"],["ng","Khí hiếm","Noble gas"],["ln","Lantanoit","Lanthanide"],["ac","Actinoit","Actinide"]];
+function ptFit(){const o=$("#pt");if(!o)return;o.style.cssText=innerHeight>innerWidth&&S.ptr!==0?"inset:auto;top:0;left:0;width:"+innerHeight+"px;height:"+innerWidth+"px;transform-origin:0 0;transform:rotate(90deg) translateY(-100%)":""}
+function PT(pk){const old=$("#pt");if(old)old.remove();const vi=!S.lang,o=document.createElement("div");o.id="pt";
+ let h='<div class="pth"><b>'+(vi?"Bảng tuần hoàn":"Periodic table")+'</b><span style="flex:1"></span><button id="ptr">⟳</button><button id="ptx">✕</button></div><div class="ptw"><div class="ptg"><div class="lg">'+LEG.map(l=>'<span><i class="c-'+l[0]+'"></i>'+l[vi?1:2]+'</span>').join("")+'</div><div class="inf" id="inf">'+(pk?(vi?"Chạm vào ô để chèn khối lượng":"Tap a cell to insert mass"):(vi?"Chạm vào ô để xem chi tiết":"Tap a cell for details"))+'</div>';
+ for(let z=1;z<=118;z++){const[r,c]=PPOS(z),m=PM[z-1];h+='<div class="el c-'+PCAT(z)+'" data-z="'+z+'" style="grid-row:'+r+';grid-column:'+c+'"><span class="zn">'+z+'</span><em class="am">'+(Number.isInteger(m)?"["+m+"]":m)+'</em><span class="sy">'+PS[z-1]+'</span><span class="nmx">'+PEN[z-1]+'</span></div>'}
+ h+='<div class="el c-ln mk" style="grid-row:6;grid-column:3">57–71</div><div class="el c-ac mk" style="grid-row:7;grid-column:3">89–103</div></div></div>';
+ o.innerHTML=h;document.body.appendChild(o);ptFit();o.querySelector("#ptx").onclick=()=>o.remove();o.querySelector("#ptr").onclick=()=>{S.ptr=S.ptr===0?1:0;ptFit()};
+ o.querySelectorAll(".el.mk").forEach(e=>e.onclick=()=>{const l=e.textContent.startsWith("57");o.querySelector("#inf").innerHTML='<div class="it c-'+(l?"ln":"ac")+'"><b style="font-size:1.6cqw">'+(l?"La–Lu":"Ac–Lr")+'</b></div><div><b class="nm">'+(l?"Lanthanides":"Actinides")+'</b><br>Z = '+(l?"57–71":"89–103")+'<br>'+(vi?"Họ ":"Series: ")+(l?"Lantanoit":"Actinoit")+'</div>'});
+ o.querySelectorAll(".el[data-z]").forEach(e=>e.onclick=()=>{const z=+e.dataset.z;if(pk){o.remove();ins(String(PM[z-1]));R();return}const k=PCAT(z);o.querySelector("#inf").innerHTML='<div class="it c-'+k+'"><small>'+z+'</small><b>'+PS[z-1]+'</b><small>'+PM[z-1]+'</small></div><div><b class="nm">'+PEN[z-1]+'</b><br>Z = '+z+' · M = '+PM[z-1]+'<br>'+(vi?"Chu kỳ ":"Period ")+([2,10,18,36,54,86,118].findIndex(x=>z<=x)+1)+' · '+LEG.find(l=>l[0]==k)[vi?1:2]+'</div>'})}
+function baseScr(s){if(s.t=="calc"||s.t=="form"||s.t=="sheet")return s;const u=S.st[S.st.length-1];if(s.t=="menu"&&u&&(u.t=="calc"||u.t=="form"||u.t=="sheet")){S.st.pop();return u}S.st.push(s);S.ex="";S.pos=0;S.rs="";S.done=0;return{t:"calc",sel:0}}
+const GR=(h,f)=>{f.grid=h;return f};
+const gt=(head,rows)=>'<table class="gt"><tr>'+head.map(x=>"<th>"+x+"</th>").join("")+"</tr>"+rows.map(r=>"<tr>"+r.map((c,i)=>Array.isArray(c)?'<td class="'+(c[1]?"s":"")+'">'+(c[0]===""?"&nbsp;":c[0])+"</td>":"<td"+(i==0&&head[0]===""?' class="h"':"")+">"+c+"</td>").join("")+"</tr>").join("")+"</table>";
+const SV=(k,d=0)=>{if(d>25)throw 2;const r=S.cells[k];if(r===undefined||r==="")return 0;const e=r[0]=="="?r.slice(1):r;return ev(e.replace(/([A-E])(\d{1,2})(?!\d)/g,(m,c,n)=>"("+SV(c+n,d+1)+")"))};
+const shw=k=>{try{if(S.cells[k]===undefined)return"";return fmt(SV(k),0)}catch(e){return"Err"}};
+function SHP(s,a){const key=()=>"ABCDE"[s.c]+(s.r+1),commit=()=>{if(S.ex!==""){S.cells[key()]=S.ex;S.ex="";S.pos=0}},mv=(dr,dc)=>{commit();s.r=Math.max(0,Math.min(44,s.r+dr));s.c=Math.max(0,Math.min(4,s.c+dc));if(s.r<s.top)s.top=s.r;if(s.r>s.top+2)s.top=s.r-2;if(s.c<s.left)s.left=s.c;if(s.c>s.left+2)s.left=s.c-2};
+ if(a=="L"){if(S.ex)S.pos=Math.max(0,S.pos-1);else mv(0,-1)}else if(a=="R"){if(S.ex)S.pos=Math.min(S.ex.length,S.pos+1);else mv(0,1)}
+ else if(a=="U")mv(-1,0);else if(a=="D"||a=="EXE"||a=="OK")mv(1,0);else if(a=="PU")mv(-3,0);else if(a=="PD")mv(3,0);
+ return R()}
+const CKN=[["lP","Chiều dài Planck","Planck length",1.616255,-35],["tP","Thời gian Planck","Planck time",5.391247,-44],["KJ","Hằng số Josephson","Josephson const.",4.835978484,14],["RK","Hằng số von Klitzing","von Klitzing",2.581280745,4],["mτ","KL tau","Tau mass",3.16754,-27],["RK-90","RK-90","RK-90",2.5812807,4],["KJ-90","KJ-90","KJ-90",4.835979,14]];
+const CCAT=[["Phổ quát","Universal",["h","ħ","c0","ε0","μ0","Z0","G","lP","tP"]],["Điện từ","Electromagnetic",["μN","μB","e","Φ0","G0","KJ","RK"]],["Nguyên tử & hạt nhân","Atomic & Nuclear",["mp","mn","me","mμ","a0","α","re","λc","γp","λcp","λcn","R∞","μp","μe","μn","μμ","mτ"]],["Lý-Hóa","Physico-Chem",["u","F","NA","k","Vm","R","c1","c2","σ"]],["Giá trị quy ước","Adopted Values",["g","atm","RK-90","KJ-90"]],["Khác","Other",["t"]]];
+const CAL={c0:"c",u:"mu",g:"gn","λc":"λC","λcp":"λCp","λcn":"λCn"},CFIND=s=>CK.concat(CKN).find(c=>c[0]==s);
+const CSTC=()=>{const m=menu("Sci Constants",CCAT.map(([vi,en,l])=>[S.lang?en:vi,()=>{const sm=menu(S.lang?en:vi,l.map(s=>{const c=CFIND(s);return[(CAL[s]||s)+" "+(S.lang?c[2]:c[1]),"("+c[3]+"*10^("+c[4]+"))"]}));sm.cat=1;return sm}]));m.cat=1;return m};
+const CVD=[["Chiều dài","Length","in▶cm|*2.54,cm▶in|/2.54,ft▶m|*0.3048,m▶ft|/0.3048,yd▶m|*0.9144,m▶yd|/0.9144,mile▶km|*1.609344,km▶mile|/1.609344,n mile▶m|*1852,m▶n mile|/1852,pc▶km|*(3.0856775814913673*10^(13)),km▶pc|/(3.0856775814913673*10^(13))"],["Diện tích","Area","acre▶m²|*4046.8564224,m²▶acre|/4046.8564224"],["Thể tích","Volume","gal(US)▶L|*3.785411784,L▶gal(US)|/3.785411784,gal(UK)▶L|*4.54609,L▶gal(UK)|/4.54609"],["Khối lượng","Mass","oz▶g|*28.349523125,g▶oz|/28.349523125,lb▶kg|*0.45359237,kg▶lb|/0.45359237"],["Vận tốc","Velocity","km/h▶m/s|/3.6,m/s▶km/h|*3.6"],["Áp suất","Pressure","atm▶Pa|*101325,Pa▶atm|/101325,mmHg▶Pa|*133.322387415,Pa▶mmHg|/133.322387415,kgf/cm²▶Pa|*98066.5,Pa▶kgf/cm²|/98066.5,lbf/in²▶kPa|*6.894757293168,kPa▶lbf/in²|/6.894757293168"],["Năng lượng","Energy","kgf·m▶J|*9.80665,J▶kgf·m|/9.80665,J▶cal15|/4.1855,cal15▶J|*4.1855"],["Công suất","Power","hp▶kW|*0.74569987158227,kW▶hp|/0.74569987158227"],["Nhiệt độ","Temperature","°F▶°C|F2C,°C▶°F|C2F"]];
+const cv=op=>{const e=S.done?"Ans":(S.ex.trim()||"Ans");S.ex=op=="F2C"?"(("+e+")-32)*5/9":op=="C2F"?"("+e+")*9/5+32":"("+e+")"+op;S.pos=S.ex.length;S.done=0;S.rs="";if(S.scr.t=="form")S.scr.f[S.scr.i].v=S.ex};
+const CONVC=()=>{const m=menu("Unit Conversions",CVD.map(([vi,en,l])=>[S.lang?en:vi,()=>{const sm=menu(S.lang?en:vi,l.split(",").map(p=>{const[n,op]=p.split("|");return[n,()=>({ap:()=>cv(op)})]}));sm.cat=1;return sm}]));m.cat=1;return m};
+const ENGL=[["f  10⁻¹⁵","*10^(-15)"],["p  10⁻¹²","*10^(-12)"],["n  10⁻⁹","*10^(-9)"],["μ  10⁻⁶","*10^(-6)"],["m  10⁻³","*10^(-3)"],["k  10³","*10^(3)"],["M  10⁶","*10^(6)"],["G  10⁹","*10^(9)"],["T  10¹²","*10^(12)"],["P  10¹⁵","*10^(15)"],["E  10¹⁸","*10^(18)"]];
+const CATTOP=()=>{const L=S.lang,m=menu("Catalog",[[L?"Sci Constants":"Hằng số khoa học",()=>CSTC()],[L?"Unit Conversions":"Chuyển đổi đơn vị",()=>CONVC()],[L?"Atomic Weight":"Khối lượng nguyên tử",()=>({ap:()=>PT(true)})],[L?"Engineering Symbols":"Ký hiệu kỹ thuật",()=>{const e=menu("ENG",ENGL);e.cat=1;return e}],[L?"Functions":"Hàm và ký hiệu",()=>{const f=menu("Functions",CATL());f.cat=1;return f}]]);m.cat=1;return m};
+function launch(i){const T=S.scr;S.st.push(T.t=="home"?T:S.scr);
+ if(i==0)S.scr={t:"calc",sel:T.sel};
+ else if(i==1)S.scr=menu("Thống kê",[["1 biến",()=>fm("Thống kê 1 biến",["x:","Tần số:"],(v,r)=>{const x=list(r[0]),q=r[1].trim()?list(r[1]):x.map(()=>1);if(!x.length||q.length!=x.length)throw 0;
+  const n=q.reduce((a,b)=>a+b),sx=x.reduce((a,b,i)=>a+b*q[i],0),sx2=x.reduce((a,b,i)=>a+b*b*q[i],0),m=sx/n,sg=Math.sqrt(sx2/n-m*m),ss=Math.sqrt((sx2-n*m*m)/(n-1));
+  return["n="+fmt(n),"Σx="+fmt(sx),"Σx²="+fmt(sx2),"x̄="+fmt(m),"σx="+fmt(sg),"sx="+fmt(ss),"minX="+fmt(Math.min(...x)),"maxX="+fmt(Math.max(...x))]})],["Ghép nhóm",()=>GS()]]);
+ else if(i==2)S.scr=menu("Distribution",[["Normal CD",()=>fm("Normal CD",["Lower:","Upper:","σ:","μ:"],v=>["P="+fmt(Phi((v[1]-v[3])/v[2])-Phi((v[0]-v[3])/v[2]),0)])],
+  ["Binomial PD",()=>fm("Binomial PD",["x:","N:","p:"],v=>["P="+fmt(bp(v[1],v[2],v[0]),0)])],["Binomial CD",()=>fm("Binomial CD",["x:","N:","p:"],v=>["P="+fmt(sum(k=>bp(v[1],v[2],k),v[0]),0)])],
+  ["Poisson PD",()=>fm("Poisson PD",["x:","λ:"],v=>["P="+fmt(pp(v[1],v[0]),0)])],["Poisson CD",()=>fm("Poisson CD",["x:","λ:"],v=>["P="+fmt(sum(k=>pp(v[1],k),v[0]),0)])]]);
+ else if(i==4)S.scr=GR(["x","f(x)"],fm("Table f(x)",["f(x)=","Start:","End:","Step:"],(v,r)=>{const o=[];const a=v[1],b=v[2],h=v[3];if(!h||(b-a)/h<0)throw 1;for(let k=0,x=a;x<=b+1e-12&&k<45;k++,x=a+k*h)o.push(fmt(x,0)+" | "+fmt(ev(r[0],x),0));return o},[0]));
+ else if(i==5)S.scr=menu("Equation",[["2 ẩn",()=>fm("Hệ 2 ẩn",["a1:","b1:","c1:","a2:","b2:","c2:"],v=>{const s=gauss([[v[0],v[1],v[2]],[v[3],v[4],v[5]]]);return["x="+fmt(s[0]),"y="+fmt(s[1])]})],
+  ["3 ẩn",()=>fm("Hệ 3 ẩn",["a1:","b1:","c1:","d1:","a2:","b2:","c2:","d2:","a3:","b3:","c3:","d3:"],v=>{const s=gauss([v.slice(0,4),v.slice(4,8),v.slice(8)]);return["x="+fmt(s[0]),"y="+fmt(s[1]),"z="+fmt(s[2])]})],
+  ["Bậc 2",()=>poly(2)],["Bậc 3",()=>poly(3)],["Bậc 4",()=>poly(4)]]);
+ else if(i==6)S.scr=menu("Inequality",[2,3,4].map(n=>["Bậc "+n,()=>fm("BPT bậc "+n,"abcde".slice(0,n+1).split("").map(c=>c+"=").concat(["1:> 2:< 3:≥ 4:≤"]),v=>ineq(v.slice(0,-1),v[v.length-1]))]));
+ else if(i==8)S.scr=menu("Base-N",[["Dec",10],["Bin",2],["Oct",8],["Hex",16]].map(b=>[b[0],()=>fm("Nhập "+b[0],["n:"],(v,r)=>{const n=parseInt(r[0],b[1]);if(isNaN(n))throw 0;return["Dec "+n,"Hex "+(n>>>0).toString(16).toUpperCase(),"Bin "+(n>>>0).toString(2),"Oct "+(n>>>0).toString(8)]},[0])]));
+ else if(i==11)S.scr=menu("Ratio",[["a:b=x:d",()=>fm("a:b=x:d",["a:","b:","d:"],v=>["x="+fmt(ok(v[0]*v[2]/v[1]))])],["a:b=c:x",()=>fm("a:b=c:x",["a:","b:","c:"],v=>["x="+fmt(ok(v[1]*v[2]/v[0]))])]]);
+ else if(i==13)S.scr=menu("MathExplorer",[["Heron",()=>fm("Heron",["a:","b:","c:"],v=>{const p=(v[0]+v[1]+v[2])/2;return["S="+fmt(ok(Math.sqrt(p*(p-v[0])*(p-v[1])*(p-v[2])))),"P="+fmt(2*p)]})],
+ ["Hình quạt",()=>fm("Hình quạt",["r:","θ(độ):"],v=>["S="+fmt(v[1]/360*Math.PI*v[0]*v[0]),"l="+fmt(v[1]/360*2*Math.PI*v[0])])],
+ ["Tam giác SSS",()=>fm("Tam giác SSS",["a:","b:","c:"],v=>{const g=[1,Math.PI/180,200/180][S.ang],[a,b,c]=v,f=(x,y,z)=>fmt(ok(Math.acos((y*y+z*z-x*x)/(2*y*z))*180/Math.PI*g),0);return["A="+f(a,b,c),"B="+f(b,a,c),"C="+f(c,a,b)]})],
+ ["Khoảng cách 2 điểm",()=>fm("Oxyz: A,B",["xA:","yA:","zA:","xB:","yB:","zB:"],v=>["AB="+fmt(nm(sb(v.slice(3),v.slice(0,3))))])],
+ ["Điểm–đường thẳng",()=>fm("d(M,Δ)",["xM:","yM:","zM:","xA:","yA:","zA:","ux:","uy:","uz:"],v=>["d="+fmt(ok(nm(cr(sb(v.slice(0,3),v.slice(3,6)),v.slice(6)))/nm(v.slice(6))))])],
+ ["Mặt phẳng 3 điểm",()=>fm("Mặt phẳng ABC",["xA:","yA:","zA:","xB:","yB:","zB:","xC:","yC:","zC:"],v=>{const A=v.slice(0,3),n=cr(sb(v.slice(3,6),A),sb(v.slice(6),A));if(nm(n)<1e-12)throw 1;return["a="+fmt(n[0]),"b="+fmt(n[1]),"c="+fmt(n[2]),"d="+fmt(-dt(n,A))]})],
+ ["XS toàn phần/Bayes",()=>fm("Bayes",["P(A):","P(B|A):","P(B|A'):"],v=>{const pb=v[0]*v[1]+(1-v[0])*v[2];return["P(B)="+fmt(pb),"P(A|B)="+fmt(ok(v[0]*v[1]/pb))]})],...GEO]);
+ else if(i==3){S.cells=S.cells||{};S.scr={t:"sheet",r:0,c:0,top:0,left:0};S.ex="";S.pos=0}else if(i==7)S.scr=CX();else if(i==9)S.scr=menu("Matrix",MX);else if(i==10)S.scr=menu("Vector",VC);else if(i==12)S.scr=menu("Math Box",MB);
+ else S.scr=UN(APPS[i][0])}
+function pick(it){const o=it[1]();if(!o)return;S.st.push(S.scr);S.scr=o;if(!o.cat){S.ex="";S.pos=0}}
+function setEd(){const s=S.scr;if(s.t=="form"){S.ex=s.f[s.i].v;S.pos=S.ex.length}}
+function run(){const s=S.scr;try{const v=s.f.map(x=>x.v.trim()?x.v:"");const st=s.title.startsWith("Thống kê"),nv=v.map((x,i)=>st||(s.raw||[]).includes(i)?0:num(x||"0"));
+ const L=s.run(nv,v);S.st.push(s);S.scr=s.grid?{t:"grid",head:s.grid,rows:L.map(x=>x.split(" | ")),top:0}:{t:"out",lines:L,top:0}}catch(e){S.st.push(s);S.scr={t:"out",lines:[e===1?"Lỗi toán":"Lỗi cú pháp"],top:0}}}
+// input
+function ins(t){const s=S.scr;if(s.t=="calc"&&S.done){S.ex=/^[+\-*\/^ᴘᴄᴍ%]/.test(t)?"Ans":"";S.pos=S.ex.length;S.done=0;S.rs=""}
+ S.ex=S.ex.slice(0,S.pos)+t+S.ex.slice(S.pos);S.pos+=t.length;if(t.endsWith("⦃⦄"))S.pos--;if(s.t=="form")s.f[s.i].v=S.ex}
+function press(a){const s=S.scr;if(S.off){if(a=="ON")S.off=0;return R()}
+ if(a=="OFF"){S.off=1;return R()}
+ if(a=="HOME"){S.st=[];S.scr={t:"home",sel:s.sel||0};return R()}
+ if(a=="BACK"){if(S.st.length)S.scr=S.st.pop();else if(s.t!="home")S.scr={t:"home",sel:0};setEd();return R()}
+ if(a=="SET"){if(!s.set){S.st.push(s);S.scr=SETM()}return R()}
+ 
+ if(a=="CAT"||a=="SCAT"||a=="CONV"){let b;if(s.cat){do{b=S.st.pop()}while(b&&(b.cat||b.t=="menu"));if(!b){b={t:"calc",sel:0};S.ex="";S.pos=0;S.rs="";S.done=0}}else b=baseScr(s);S.st.push(b);S.scr=a=="CAT"?CATTOP():a=="CONV"?CONVC():CSTC();return R()}
+ if(a=="TOOLS"){if(s.t=="menu"&&s.title=="TOOLS")return R();const b=baseScr(s);S.st.push(b);S.scr=menu("TOOLS",TL);return R()}
+ if(a=="SCAT"){S.st.push(s);S.scr=CONST();return R()}
+ if(a=="FUNC"){S.st.push(s);const o=FX();o.f[0].v=S.fx||"";S.scr=o;setEd();return R()}
+ if(a=="VAR"){S.sto=!S.sto;return R()}
+ const ed=s.t=="calc"||s.t=="form"||s.t=="sheet";
+ if(a=="MIX"){if(ed){if(s.t=="calc"&&S.done){S.ex="";S.pos=0;S.done=0;S.rs=""}const b=S.ex.slice(0,S.pos),m=b.match(/(\d+)$/),n=m?m[0]:"",st=b.length-n.length;S.ex=b.slice(0,st)+"⦃"+n+"⦄ᵐ⦃⦄⁄⦃⦄"+S.ex.slice(S.pos);S.pos=n?st+n.length+4:st+1;if(s.t=="form")s.f[s.i].v=S.ex}return R()}
+ if(a=="FRAC"){if(ed){if(s.t=="calc"&&S.done){S.ex="";S.pos=0;S.done=0;S.rs=""}const b=S.ex.slice(0,S.pos),m=b.match(/(\d+\.?\d*|\.\d+)$/),n=m?m[0]:"",st=b.length-n.length;S.ex=b.slice(0,st)+"⦃"+n+"⦄⁄⦃⦄"+S.ex.slice(S.pos);S.pos=n?st+n.length+4:st+1;if(s.t=="form")s.f[s.i].v=S.ex}return R()}
+ if(a.startsWith("i:")){const t=a.slice(2);
+  if(ed){if(S.sto&&/^[A-Fxyz]$/.test(t)){S.V[t]=S.Ans;S.sto=0;return R()}ins(t)}
+  else if(/^[1-9]$/.test(t)){const n=+t-1;if(s.t=="home"){const i=Math.floor(s.sel/6)*6+n;if(i<APPS.length){s.sel=i;launch(i);S.ex="";S.pos=0}}else if(s.t=="menu"&&s.items[n])act(s,n)}
+  return R()}
+ if(a=="DEL"&&ed){delX();if(s.t=="form")s.f[s.i].v=S.ex;return R()}
+ if(a=="AC"){if(s.t=="sheet"&&!S.ex)delete S.cells["ABCDE"[s.c]+(s.r+1)];if(ed){S.ex="";S.pos=0;S.rs="";if(s.t=="form")s.f[s.i].v=""}return R()}
+ if(a=="FMT"){if(s.t=="calc"&&S.done){S.rm=S.rm=="dec"?"std":"dec";S.rs=RF(S.Ans,S.rm)}return R()}
+ if(a=="SFMT"){if(s.t=="calc"&&S.done){S.st.push(s);S.scr=FMM()}return R()}
+ if(a=="DEC"){if(s.t=="calc"&&S.done){S.rm="dec";S.rs=RF(S.Ans,"dec")}return R()}
+ if(s.t=="sheet")return SHP(s,a);
+ if((a=="PU"||a=="PD")&&s.t=="form"){s.i=a=="PD"?s.f.length-1:0;setEd();return R()}
+ if((a=="PU"||a=="PD")&&s.t=="calc")return R()
+ if(s.t=="calc"||s.t=="form"){
+  if(a=="L")mv(-1);else if(a=="R")mv(1);
+  else if(s.t=="form"&&(a=="U"||a=="D")){s.i=Math.max(0,Math.min(s.f.length-1,s.i+(a=="D"?1:-1)));setEd()}
+  else if(a=="EXE"||a=="OK"){
+   if(s.t=="form"){if(s.i<s.f.length-1){s.i++;setEd()}else run()}
+   else if(S.ex){try{const v=isC(S.ex)?evc(S.ex):ev(S.ex);S.pre=S.Ans;S.Ans=v;S.rm=S.frac?"std":"dec";S.rs=RF(v,S.rm);S.done=1}catch(e){S.rs=e===1?"Lỗi toán":"Lỗi cú pháp"}}}
+  return R()}
+ if(s.t=="home"){const n=APPS.length;if(a=="R")s.sel=(s.sel+1)%n;if(a=="L")s.sel=(s.sel+n-1)%n;if(a=="D")s.sel=Math.min(n-1,s.sel+3);if(a=="U")s.sel=Math.max(0,s.sel-3);if(a=="PD")s.sel=Math.min(n-1,s.sel+6);if(a=="PU")s.sel=Math.max(0,s.sel-6);
+  if(a=="OK"||a=="EXE"){launch(s.sel);S.ex="";S.pos=0}return R()}
+ if(s.t=="menu"){const n=s.items.length;if(a=="PD")s.sel=Math.min(n-1,s.sel+3);if(a=="PU")s.sel=Math.max(0,s.sel-3);if(a=="D")s.sel=(s.sel+1)%n;if(a=="U")s.sel=(s.sel+n-1)%n;if(a=="OK"||a=="EXE")act(s,s.sel);return R()}
+ if(s.t=="out"||s.t=="grid"){const len=(s.lines||s.rows).length,mx=Math.max(0,len-3);if(a=="D")s.top=Math.min(mx,s.top+1);if(a=="PD")s.top=Math.min(mx,s.top+3);if(a=="U")s.top=Math.max(0,s.top-1);if(a=="PU")s.top=Math.max(0,s.top-3);return R()}R()}
+function act(s,n){const it=s.items[n];
+ if(s.fmt){S.rm=it[1];S.scr=S.st.pop();S.rs=RF(S.Ans,S.rm);return}
+ if(s.set){it[1]();const q=SETM();q.sel=s.sel;S.scr=q;return}
+ if(s.set){it[1]();S.scr=S.st.pop()||{t:"home",sel:0}}
+ else if(s.cat){const v=typeof it[1]=="function"?it[1]():it[1];if(v&&v.t=="menu"){v.cat=1;S.st.push(s);S.scr=v;return}let b;do{b=S.st.pop()}while(b&&(b.cat||b.t=="menu"));S.scr=b||{t:"home",sel:0};setEd();if(v&&v.ap)v.ap();else if(typeof v=="string")ins(v)}
+ else{S.st.pop?0:0;pick(it)}
+ setEd()}
+// render
+function R(){const s=S.scr,L=$("#lcd");if(S.off){L.innerHTML="";return}
+ const sb='<div id="sb"><span>'+(S.sh?"S":"&nbsp;")+"</span><span>"+(S.sto?"STO":"")+"</span><span>"+["D","R","G"][S.ang]+"</span><span>"+(S.frac?"Math":"Dec")+"</span></div>";let h="";
+ if(s.t=="home"){const pg=Math.floor(s.sel/6);h='<div class="g">'+APPS.slice(pg*6,pg*6+6).map((a,k)=>'<div class="c'+(pg*6+k==s.sel?" s":"")+'"><i>'+a[1]+"</i>"+a[0]+" "+String.fromCharCode(9312+k)+"</div>").join("")+"</div>"}
+ else if(s.t=="calc"||s.t=="form"){const cur=(t,p)=>rich(t.slice(0,p)+"\u0001"+t.slice(p));
+  if(s.t=="calc")h='<div class="m">'+cur(S.ex,S.pos)+'</div><div class="r" style="position:absolute;right:2cqw;bottom:1cqw">'+RH(S.rs)+"</div>";
+  else{const a=Math.max(0,Math.min(s.i-1,s.f.length-3));h='<div class="m" style="opacity:.6">'+s.title+"</div>"+s.f.slice(a,a+3).map((f,k)=>'<div class="m'+(a+k==s.i?" s":"")+'">'+f.n+" "+(a+k==s.i?cur(S.ex,S.pos):rich(f.v))+"</div>").join("")}}
+ else if(s.t=="menu"){const a=Math.max(0,Math.min(s.sel-1,s.items.length-3));h=s.items.slice(a,a+3).map((m,k)=>'<div class="m'+(a+k==s.sel?" s":"")+'">'+(a+k+1)+":"+m[0]+"</div>").join("")}
+ else if(s.t=="grid")h=gt(s.head,s.rows.slice(s.top,s.top+3));
+ else if(s.t=="sheet"){const cs=[0,1,2].map(i=>s.left+i),cu=(t,p)=>rich(t.slice(0,p)+"\u0001"+t.slice(p)),sk="ABCDE"[s.c]+(s.r+1);h=gt([""].concat(cs.map(c=>"ABCDE"[c])),[0,1,2].map(i=>{const r=s.top+i;return[r+1].concat(cs.map(c=>[shw("ABCDE"[c]+(r+1)).slice(0,6),r==s.r&&c==s.c]))}))+'<div class="m" style="font-size:4.4cqw">'+sk+": "+(S.ex!==""?cu(S.ex,S.pos):disp(S.cells[sk]||""))+"</div>"}
+ else if(s.t=="out")h=s.lines.slice(s.top,s.top+3).map(x=>'<div class="m">'+disp(x)+"</div>").join("");
+ L.innerHTML=sb+TT(h);$("#nt").textContent="";{const c=L.querySelector(".m .cur");if(c){const m=c.closest(".m"),a=c.getBoundingClientRect(),b=m.getBoundingClientRect();if(a.right>b.right-4)m.scrollLeft+=(a.right-b.right+10)/SC;else if(a.left<b.left)m.scrollLeft-=(b.left-a.left+10)/SC}}}
+// keyboard
+const T=[["ON","",25,26,"ON"],["⌂","HOME",85,26,"HOME"],["⚙","SETTINGS",25,86,"SET"],["↩","",85,86,"BACK"],["↑","SHIFT",25,140,"SHIFT","sh"],["x→","VARIABLE",85,140,"VAR"],["f(x)","a b/c",141,140,"FUNC"],["CATALOG","",255,140,"CAT"],["...","TOOLS",313,140,"TOOLS"],
+["▲","",198,30,"U"],["◀","",141,82,"L"],["OK","",198,82,"OK"],["▶","",255,82,"R"],["▼","",198,134,"D"]];
+T.forEach(k=>{const b=document.createElement("button");b.className="k"+(k[5]?" "+k[5]:"");b.textContent=k[0];if(k[0]=="CATALOG"){b.style.fontSize="7px";b.style.letterSpacing="-.2px"}b.style.left=k[2]+"px";b.style.top=k[3]+"px";
+ b.onclick=()=>{if(k[4]=="SHIFT"){S.sh=!S.sh;return R()}const a=S.sh&&k[4]=="CAT"?"SCAT":S.sh&&k[4]=="FUNC"?"MIX":k[4];S.sh=0;press(a)};$("#t").appendChild(b);
+ if(k[1]){const l=document.createElement("div");l.className="l";l.textContent=k[1];if(k[1]=="a b/c")l.style.color="#ffc94d";l.style.left=k[2]+"px";l.style.top=(k[3]-26)+"px";$("#t").appendChild(l)}});
+{const l=document.createElement("div");l.className="l";l.style.color="#ffc94d";l.textContent="≡";l.style.left="236px";l.style.top="118px";$("#t").appendChild(l)}
+
+{const p=document.createElement("button");p.className="k pill";p.style.left="313px";p.style.top="56px";p.innerHTML="▲<br>▼";
+ p.onclick=e=>{const r=p.getBoundingClientRect();press(e.clientY<r.top+r.height/2?"PU":"PD")};$("#t").appendChild(p)}
+// [label, gold, main, shift]
+const rows=[[6,[["x","CONST","i:x","SCAT"],["□/□","CONV","FRAC","CONV"],["√□","³√","i:√⦃⦄","i:³√⦃⦄"],["x■","x⁻¹","i:^⦃⦄","i:^⦃-1⦄"],["x²","log","i:^⦃2⦄","i:log("],["log□","ln","i:log(","i:ln("]]],
+[6,[["Ans","PreAns","i:Ans","i:PreAns"],["sin","sin⁻¹","i:sin(","i:asin("],["cos","cos⁻¹","i:cos(","i:acos("],["tan","tan⁻¹","i:tan(","i:atan("],["(","=","i:(","i:="],[")",",","i:)","i:,"]]],
+[5,[["7","π","i:7","i:π"],["8","e","i:8","i:e"],["9","i","i:9","i:i"],["DEL","INS","DEL"],["AC","OFF","AC","OFF"]]],
+[5,[["4","A","i:4","i:A"],["5","B","i:5","i:B"],["6","C","i:6","i:C"],["×","","i:*"],["÷","%","i:/","i:%"]]],
+[5,[["1","D","i:1","i:D"],["2","E","i:2","i:E"],["3","F","i:3","i:F"],["+","°′″","i:+"],["−","(−)","i:-"]]],
+[5,[["0","x","i:0","i:x"],[".","y","i:.","i:y"],["×10■","z","i:ᴇ","i:z"],["FORMAT","⇄","FMT","SFMT"],["EXE","≈","EXE","DEC"]]]];
+rows.forEach(([n,ks])=>{const r=document.createElement("div");r.className="rw r"+n;ks.forEach(k=>{const w=document.createElement("div");w.className="w";
+ if(k[1]){const g=document.createElement("small");g.textContent=k[1];w.appendChild(g)}
+ const b=document.createElement("button");b.textContent=k[0];if(n==5&&k[0].length>2)b.style.fontSize="10px";if(k[2]=="AC"||k[2]=="DEL"){b.className="ac";b.style.fontSize="13px"}
+ b.onclick=()=>{const a=S.sh?k[3]:k[2];S.sh=0;if(a)press(a);else R()};w.appendChild(b);r.appendChild(w)});$("#kb").appendChild(r)});
+let SC=1;
+function fit(){const d=$("#d"),cs=getComputedStyle(document.documentElement);d.style.transform="none";const a=innerHeight-parseFloat(cs.paddingTop)-parseFloat(cs.paddingBottom)-12;SC=Math.min(innerWidth/400,a/d.offsetHeight,1.6);d.style.transform="translateX(-50%) scale("+SC+")"}
+addEventListener("resize",()=>{fit();ptFit()});
+const E=a=>a.replace('<span class="cur"></span>',"")===""?a+'<i class="bx"></i>':a;
+const lin=t=>t.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/\*/g,"×").replace(/\//g,"÷").replace(/ᴘ/g,"P").replace(/ᴄ/g,"C").replace(/ᴍ/g,"Mod").replace(/ᴇ([+-]?[\d\u0001]*)/g,"×10<sup>$1</sup>").replace(/\u0001/g,'<span class="cur"></span>');
+const FRh=(a,b)=>'<span class="fr"><span>'+a+'</span><span>'+b+'</span></span>';
+function rich(s){let i=0;function q(cl){let o="",b="";const f=()=>{if(b){o+=lin(b);b=""}},g=()=>{i++;const a=q(1);if(s[i]=="⦄")i++;return a};
+ while(i<s.length){const c=s[i];if(c=="⦄"){if(cl)break;i++;continue}
+  if(c=="⦃"){f();const a=g();if(s[i]=="ᵐ"&&s[i+1]=="⦃"){i++;const b=g();let d="";if(s[i]=="⁄"&&s[i+1]=="⦃"){i++;d=g()}o+=E(a)+FRh(E(b),E(d))}else if(s[i]=="⁄"&&s[i+1]=="⦃"){i++;o+=FRh(E(a),E(g()))}else o+=a;continue}
+  if(c=="^"&&s[i+1]=="⦃"){f();i++;o+="<sup>"+E(g())+"</sup>";continue}
+  if(c=="√"&&s[i+1]=="⦃"){f();i++;o+='<span class="rd">√<span class="rx">'+E(g())+"</span></span>";continue}
+  if(c=="³"&&s[i+1]=="√"&&s[i+2]=="⦃"){f();i+=2;o+='<span class="rd"><sup>3</sup>√<span class="rx">'+E(g())+"</span></span>";continue}
+  b+=c;i++}f();return o}return q(0)}
+const RH=s=>{if(S.dc)s=s.replace(/(\d)\.(\d)/g,"$1,$2");if(S.ds)s=s.replace(/(^|[^\d.,])(\d{4,})/g,(m,a,b)=>a+b.replace(/\B(?=(\d{3})+$)/g,S.dc?".":","));if(/⦃/.test(s))return rich(s);s=s.replace(/&/g,"&amp;").replace(/</g,"&lt;");let m=s.match(/^(-?)(\d+) (\d+)\/(\d+)$/);if(m)return m[1]+m[2]+FRh(m[3],m[4]);m=s.match(/^(-?)(\d+)\/(\d+)$/);if(m)return m[1]+FRh(m[2],m[3]);return s.replace(/×10\^(-?\d+)/,"×10<sup>$1</sup>").replace(/\^(-?\d+)/g,"<sup>$1</sup>").replace(/⟦(\d+)⟧/g,'<span style="text-decoration:overline">$1</span>').replace(/ᴇ/g,"E")};
+const okp=p=>{const s=S.ex;return!(s[p]=="⁄"||s[p-1]=="⁄"||s[p]=="ᵐ"||s[p-1]=="ᵐ"||(s[p]=="⦃"&&/[\^√]/.test(s[p-1]||"")))};
+function mv(d){let p=S.pos+d;while(p>0&&p<S.ex.length&&!okp(p))p+=d;S.pos=Math.max(0,Math.min(S.ex.length,p))}
+const mt=(s,i)=>{let d=0;for(;i<s.length;i++){if(s[i]=="⦃")d++;if(s[i]=="⦄"&&--d==0)return i}return s.length-1},bk=(s,j)=>{let d=0;for(;j>=0;j--){if(s[j]=="⦄")d++;if(s[j]=="⦃"&&--d==0)return j}return 0};
+function delX(){const s=S.ex,p=S.pos;if(p<1)return;const c=s[p-1];if(c=="⦄"){S.pos--;return}
+ if(c=="⦃"){let a=p-1,st=a,en;while(s[st-1]=="⁄"||s[st-1]=="ᵐ")st=bk(s,st-2);if(st==a&&/[\^√]/.test(s[a-1]||"")){st=a-1;if(s[st-1]=="³")st--;en=mt(s,a)}else{en=mt(s,st);while(s[en+1]=="⁄"||s[en+1]=="ᵐ")en=mt(s,en+2)}
+  
+  const e=s.slice(st,en+1).replace(/[⦃⦄⁄ᵐ^√³]/g,"")==="";if(e)S.ex=s.slice(0,st)+s.slice(en+1);S.pos=st;return}
+ S.ex=s.slice(0,p-1)+s.slice(p);S.pos--}
+function sy(v){const a=Math.abs(v),g=v<0?"-":"",t=(x,y)=>Math.abs(x-y)<1e-9*Math.max(1,x),w=(c,u,b)=>g+(b==1?(c==1?"":c)+u:"⦃"+(c==1?"":c)+u+"⦄⁄⦃"+b+"⦄");
+ for(let b=1;b<=30;b++){const x=a*b/Math.PI,c=Math.round(x);if(c>0&&c<1000&&t(x,c))return w(c,"π",b)}
+ for(let n=2;n<100;n++){if([4,9,16,25,36,49,64,81].includes(n))continue;for(let b=1;b<=30;b++){const x=a*b/Math.sqrt(n),c=Math.round(x);if(c>0&&c<1000&&t(x,c))return w(c,"√⦃"+n+"⦄",b)}}}
+const ca=(p,q)=>[p[0]+q[0],p[1]+q[1]],cln=z=>[Math.log(Math.hypot(z[0],z[1])),Math.atan2(z[1],z[0])],cex=z=>[Math.exp(z[0])*Math.cos(z[1]),Math.exp(z[0])*Math.sin(z[1])],csq=z=>{const r=Math.hypot(z[0],z[1]);return[Math.sqrt((r+z[0])/2),(z[1]<0?-1:1)*Math.sqrt((r-z[0])/2)]};
+function cp(b,w){if(!w[1]&&Number.isInteger(w[0])&&Math.abs(w[0])<=200){let r=[1,0],k=Math.abs(w[0]);while(k--)r=cm(r,b);return w[0]<0?cd([1,0],r):r}if(!b[0]&&!b[1])return[0,0];return cex(cm(w,cln(b)))}
+const isC=t=>/i/.test(t.replace(/ceil|asinh|sinh|asin|sin|int|sign/g,""))||/arg\(|conj\(|Re\(|Im\(/.test(t)||(/Ans/.test(t)&&Array.isArray(S.Ans))||(/PreAns/.test(t)&&Array.isArray(S.pre));
+function evc(src){src=src.replace(/⦃([^⦃⦄]*)⦄ᵐ⦃([^⦃⦄]*)⦄⁄⦃([^⦃⦄]*)⦄/g,"(($1)+($2)/($3))").replace(/⦃/g,"(").replace(/⦄/g,")").replace(/⁄/g,"/");
+ let s=src.replace(/\s/g,"").replace(/PreAns/g,"⒫").replace(/Ans/g,"⒜").replace(/([\d)⒜⒫π])(?=[(a-zA-Zπ√⒜⒫])/g,"$1*").replace(/\)(?=\d)/g,")*").replace(/i(?=[(π⒜⒫])/g,"i*");
+ let i=0;const pk=()=>s[i],K=[Math.PI/180,1,Math.PI/200][S.ang];
+ const fn=(n,a)=>{const k=a[1]?1:K;switch(n){case"sin":return[Math.sin(a[0]*k)*Math.cosh(a[1]),Math.cos(a[0]*k)*Math.sinh(a[1])];case"cos":return[Math.cos(a[0]*k)*Math.cosh(a[1]),-Math.sin(a[0]*k)*Math.sinh(a[1])];case"tan":return cd(fn("sin",a),fn("cos",a));case"abs":return[Math.hypot(a[0],a[1]),0];case"arg":return[Math.atan2(a[1],a[0])/K,0];case"conj":return[a[0],-a[1]];case"Re":return[a[0],0];case"Im":return[a[1],0];case"ln":return cln(a);case"log":{const l=cln(a);return[l[0]/Math.LN10,l[1]/Math.LN10]}case"√":return csq(a);default:return cex(a)}};
+ const ex=()=>{let v=tm();while(pk()=="+"||pk()=="-"){const o=s[i++],t=tm();v=o=="+"?ca(v,t):cs(v,t)}return v},
+ tm=()=>{let v=un();while(pk()=="*"||pk()=="/"){const o=s[i++],t=un();if(o=="/"&&!t[0]&&!t[1])throw 1;v=o=="*"?cm(v,t):cd(v,t)}return v},
+ un=()=>{if(pk()=="-"){i++;const v=un();return[-v[0],-v[1]]}if(pk()=="+"){i++;return un()}return pw()},
+ pw=()=>{const b=po();if(pk()=="^"){i++;return cp(b,un())}return b},
+ po=()=>{let v=pr();while(pk()=="%"){i++;v=[v[0]/100,v[1]/100]}return v},
+ pr=()=>{if(pk()=="("){i++;const v=ex();if(pk()==")")i++;return v}
+  let m=s.slice(i).match(/^(sin|cos|tan|abs|arg|conj|Re|Im|ln|log|√|e\^)\(/);if(m){i+=m[0].length;const a=ex();if(pk()==")")i++;return fn(m[1],a)}
+  m=s.slice(i).match(/^(\d+\.?\d*|\.\d+)(ᴇ[+-]?\d+)?/);if(m){i+=m[0].length;return[parseFloat(m[0].replace("ᴇ","e")),0]}
+  const c=s[i];if(c=="i"){i++;return[0,1]}if(c=="π"){i++;return[Math.PI,0]}if(c=="⒜"||c=="⒫"){i++;const x=c=="⒜"?S.Ans:S.pre;return Array.isArray(x)?x:[x,0]}
+  if(c=="e"){i++;return[Math.E,0]}if(c&&/[A-Fxyz]/.test(c)){i++;return[S.V[c]||0,0]}throw 0};
+ let v=ex();if(i<s.length)throw 0;const t=1e-12*Math.max(1,Math.abs(v[0]),Math.abs(v[1]));v=v.map(x=>Math.abs(x)<t?0:x);if(!v.every(isFinite))throw 1;return v[1]?v:v[0]}
+function CF(z,m){const[a,b]=z,f=x=>fmt(x,m=="dec"?0:1);if(m=="pol"){return f(Math.hypot(a,b))+"∠"+fmt(Math.atan2(b,a)/Kd(),0)}return(a||!b?f(a):"")+(b?(b<0?"-":a?"+":"")+(Math.abs(b)==1?"":f(Math.abs(b)))+"i":"")}
+function RF(v,m){if(Array.isArray(v)||m=="rect"||m=="pol")return CF(Array.isArray(v)?v:[v,0],m=="std"&&S.cp?"pol":m);const f=S.frac;try{if(m=="dec")return fmt(v,0);S.frac=1;let r=fmt(v);if(m=="std"&&!/\//.test(r)&&v%1)r=sy(v)||r;
+ if(m=="mix"||(m=="std"&&S.mx)){const k=r.match(/^(-?)(\d+)\/(\d+)$/);if(k&&+k[2]>=+k[3])r=k[1]+Math.floor(k[2]/k[3])+" "+k[2]%k[3]+"/"+k[3]}
+ else if(m=="pf"){let n=Math.abs(v);if(n>=2&&n%1==0&&n<=1e12){const o=[];for(let p=2;p*p<=n;p++){let c=0;while(n%p==0){n/=p;c++}if(c)o.push(p+(c>1?"^"+c:""))}if(n>1)o.push(String(n));r=(v<0?"-":"")+o.join("×")}}
+ else if(m=="eng"&&v){const e=Math.floor(Math.log10(Math.abs(v))/3)*3;r=+(v/10**e).toPrecision(10)+"×10^"+e}
+ else if(m=="sci"&&v){const e=Math.floor(Math.log10(Math.abs(v)));r=+(v/10**e).toPrecision(10)+"×10^"+e}
+ else if(m=="rec"){const k=r.match(/^(-?)(\d+)\/(\d+)$/);if(k){let a=+k[2],b=+k[3],q=a%b,mp={},d=[];const ip=Math.floor(a/b);while(q&&mp[q]===undefined&&d.length<60){mp[q]=d.length;q*=10;d.push(Math.floor(q/b));q%=b}if(!q)r=k[1]+ip+"."+d.join("");else if(mp[q]!==undefined)r=k[1]+ip+"."+d.slice(0,mp[q]).join("")+"⟦"+d.slice(mp[q]).join("")+"⟧";else r=fmt(v,0)}else if(v%1)r=fmt(v,0)}
+ else if(m=="dms"){const a=Math.abs(v),d=Math.floor(a),n=Math.floor((a-d)*60);r=(v<0?"-":"")+d+"°"+n+"′"+(+(((a-d)*60-n)*60).toFixed(2))+"″"}
+ return r}finally{S.frac=f}}
+const FMM=()=>{const L=S.lang,m=menu("FORMAT",[["Decimal","Thập phân","dec"],["Standard","Chuẩn (phân số)","std"],["Mixed number","Hỗn số","mix"],["Improper fraction","Phân số","std"],["Prime factors","Phân tích TSNT","pf"],["Engineering","Ký hiệu kỹ thuật","eng"],["Sexagesimal °′″","Độ phút giây","dms"],["Recurring decimal","Số thập phân tuần hoàn","rec"],["Standard form a×10ⁿ","Dạng a×10ⁿ","sci"],["Rectangular coord","Tọa độ vuông góc","rect"],["Polar coord","Tọa độ cực","pol"]].map(x=>[L?x[0]:x[1],x[2]]));m.fmt=1;return m};
+const SETM=()=>{const t=(e,v)=>S.lang?e:v,m=menu("Settings",[["⇄ Angle: "+["Degree","Radian","Gradian"][S.ang],()=>{S.ang=(S.ang+1)%3}],["⇄ Output: "+(S.frac?"Math":"Decimal"),()=>{S.frac=S.frac?0:1}],["⇄ "+t("Format: ","Định dạng: ")+["Norm","Fix","Sci"][S.nm],()=>{S.nm=(S.nm+1)%3}],["⇄ "+t("Digits: ","Số chữ số: ")+S.nd,()=>{S.nd=(S.nd+1)%10}],["⇄ "+t("Fraction: ","Phân số: ")+(S.mx?t("Mixed","Hỗn số"):t("Improper","Thường")),()=>{S.mx=!S.mx}],["⇄ "+t("Decimal mark: ","Dấu thập phân: ")+(S.dc?t("Comma","Phẩy"):t("Dot","Chấm")),()=>{S.dc=!S.dc}],["⇄ "+t("Separator: ","Phân cách nghìn: ")+(S.ds?t("On","Bật"):t("Off","Tắt")),()=>{S.ds=!S.ds}],["⇄ "+t("Complex: ","Số phức: ")+(S.cp?"r∠θ":"a+bi"),()=>{S.cp=!S.cp}],["⇄ "+(S.lang?"Language: English":"Ngôn ngữ: Tiếng Việt"),()=>{S.lang=S.lang?0:1}],["↺ "+t("Reset settings","Đặt lại cài đặt"),()=>{Object.assign(S,{ang:0,frac:1,nm:0,nd:3,mx:0,dc:0,ds:0,cp:0})}]]);m.set=1;return m};
+R();fit();
+if("serviceWorker"in navigator)addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}));
+</script></body></html>
