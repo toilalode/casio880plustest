@@ -52,7 +52,15 @@ const $=q=>document.querySelector(q);
 const S={nm:0,nd:3,lang:0,sh:0,sto:0,off:0,ang:0,frac:1,V:{},Ans:0,pre:0,ex:"",pos:0,done:0,rs:"",st:[],scr:{t:"home",sel:0}};
 const sn=v=>String(v).replace("e","ᴇ");
 const F=n=>{if(n<0||n%1)throw 1;let r=1;for(let i=2;i<=n;i++)r*=i;return r};
-function ev(src,xv){src=src.replace(/⦃([^⦃⦄]*)⦄ᵐ⦃([^⦃⦄]*)⦄⁄⦃([^⦃⦄]*)⦄/g,"(($1)+($2)/($3))").replace(/⦃/g,"(").replace(/⦄/g,")").replace(/⁄/g,"/");
+const gcd2=(a,b)=>{a=Math.abs(a);b=Math.abs(b);while(b)[a,b]=[b,a%b];return a};
+function SPF(n,P,xv){const E=(t,x)=>ev(t,x);const I=t=>{const v=E(t,xv);if(v%1)throw 1;return v};
+ if(n=="Rem"){if(P.length!=2)throw 0;const a=E(P[0],xv),b=E(P[1],xv);if(!b)throw 1;return a-b*Math.trunc(a/b)}
+ if(n=="GCD"||n=="LCM"){if(P.length!=2)throw 0;const a=I(P[0]),b=I(P[1]);const g=gcd2(a,b);return n=="GCD"?g:(g?Math.abs(a*b)/g:0)}
+ if(n=="∂"){if(P.length!=2)throw 0;const a=E(P[1],xv),h=1e-3,f=x=>E(P[0],x);return(-f(a+2*h)+8*f(a+h)-8*f(a-h)+f(a-2*h))/(12*h)}
+ if(n=="∫"){if(P.length!=3)throw 0;const a=E(P[1],xv),b=E(P[2],xv),N=2000,h=(b-a)/N,f=x=>E(P[0],x);let t=f(a)+f(b);for(let k=1;k<N;k++)t+=f(a+k*h)*(k%2?4:2);return t*h/3}
+ if(n=="Σ"||n=="Π"){if(P.length!=3)throw 0;const a=I(P[1]),b=I(P[2]);if(b-a>1e6)throw 1;let t=n=="Σ"?0:1;for(let k=a;k<=b;k++){const v=E(P[0],k);t=n=="Σ"?t+v:t*v}return t}
+ throw 0}
+function ev(src,xv){src=src.replace(/(\d*)\.(\d*)⟦(\d+)⟧/g,(m,I,N,R)=>"(("+(I||0)+")+("+(parseInt(N+R)-(N?parseInt(N):0))+")/("+10**N.length*(10**R.length-1)+"))").replace(/⦃([^⦃⦄]*)⦄ᵐ⦃([^⦃⦄]*)⦄⁄⦃([^⦃⦄]*)⦄/g,"(($1)+($2)/($3))").replace(/⦃/g,"(").replace(/⦄/g,")").replace(/⁄/g,"/");
  let s=src.replace(/PreAns/g,"("+sn(S.pre)+")").replace(/Ans/g,"("+sn(S.Ans)+")").replace(/π/g,"(PI)").replace(/\s/g,"");
  s=s.replace(/([\d)])(?=[(a-zA-Z√³])/g,"$1*").replace(/\)(?=\d)/g,")*");
  let i=0;const pk=()=>s[i],K=[Math.PI/180,1,Math.PI/200][S.ang],tr=a=>a*K,fr=a=>a/K;
@@ -64,7 +72,9 @@ function ev(src,xv){src=src.replace(/⦃([^⦃⦄]*)⦄ᵐ⦃([^⦃⦄]*)⦄⁄�
  function po(){let v=pr();while(pk()=="!"||pk()=="%"){v=s[i++]=="!"?F(v):v/100}return v}
  function pr(){
   if(pk()=="("){i++;const v=ex();if(pk()==")")i++;return v}
-  let m=s.slice(i).match(/^(asinh|acosh|atanh|ceil|int|sinh|cosh|tanh|floor|round|sign|asin|acos|atan|sin|cos|tan|log|ln|abs|³√|√|e\^|10\^)\(/);
+  let m=s.slice(i).match(/^(∂|∫|Σ|Π|Rem|GCD|LCM)\(/);
+  if(m){i+=m[0].length;let d=1,st=i;const P=[];for(;i<s.length;i++){const c=s[i];if(c=="(")d++;else if(c==")"){if(--d==0)break}else if(c==","&&d==1){P.push(s.slice(st,i));st=i+1}}P.push(s.slice(st,i));if(s[i]==")")i++;return SPF(m[1],P,xv)}
+  m=s.slice(i).match(/^(asinh|acosh|atanh|ceil|int|sinh|cosh|tanh|floor|round|sign|asin|acos|atan|sin|cos|tan|log|ln|abs|³√|√|e\^|10\^)\(/);
   if(m){i+=m[0].length;const a=ex();if(pk()==")")i++;
    switch(m[1]){case"sin":return Math.sin(tr(a));case"cos":return Math.cos(tr(a));case"tan":return Math.tan(tr(a));case"asin":return fr(Math.asin(a));case"acos":return fr(Math.acos(a));case"atan":return fr(Math.atan(a));
    case"log":return Math.log10(a);case"sinh":return Math.sinh(a);case"asinh":return Math.asinh(a);case"acosh":return Math.acosh(a);case"atanh":return Math.atanh(a);case"ceil":return Math.ceil(a);case"int":return Math.trunc(a);case"cosh":return Math.cosh(a);case"tanh":return Math.tanh(a);case"floor":return Math.floor(a);case"round":return Math.round(a);case"sign":return Math.sign(a);case"ln":return Math.log(a);case"abs":return Math.abs(a);case"√":if(a<0)throw 1;return Math.sqrt(a);case"³√":return Math.cbrt(a);case"e^":return Math.exp(a);default:return Math.pow(10,a)}}
@@ -178,6 +188,7 @@ const CVD=[["Chiều dài","Length","in▶cm|*2.54,cm▶in|/2.54,ft▶m|*0.3048,
 const cv=op=>{const e=S.done?"Ans":(S.ex.trim()||"Ans");S.ex=op=="F2C"?"(("+e+")-32)*5/9":op=="C2F"?"("+e+")*9/5+32":"("+e+")"+op;S.pos=S.ex.length;S.done=0;S.rs="";if(S.scr.t=="form")S.scr.f[S.scr.i].v=S.ex};
 const CONVC=()=>{const m=menu("Unit Conversions",CVD.map(([vi,en,l])=>[S.lang?en:vi,()=>{const sm=menu(S.lang?en:vi,l.split(",").map(p=>{const[n,op]=p.split("|");return[n,()=>({ap:()=>cv(op)})]}));sm.cat=1;return sm}]));m.cat=1;return m};
 const ENGL=[["f  10⁻¹⁵","*10^(-15)"],["p  10⁻¹²","*10^(-12)"],["n  10⁻⁹","*10^(-9)"],["μ  10⁻⁶","*10^(-6)"],["m  10⁻³","*10^(-3)"],["k  10³","*10^(3)"],["M  10⁶","*10^(6)"],["G  10⁹","*10^(9)"],["T  10¹²","*10^(12)"],["P  10¹⁵","*10^(15)"],["E  10¹⁸","*10^(18)"]];
+const SCTM=()=>{const L=S.lang,m=menu("SHIFT CATALOG",[[L?"Derivative":"Đạo hàm","∂("],[L?"Integration":"Tích phân","∫("],[L?"Summation":"Tổng dãy số","Σ("],[L?"Product":"Tích dãy số","Π("],[L?"Remainder":"Số dư","Rem("],[L?"Factorial":"Giai thừa","!"],[L?"Permutation":"Chỉnh hợp","ᴘ"],[L?"Combination":"Tổ hợp","ᴄ"],["GCD","GCD("],["LCM","LCM("],[L?"Recurring Decimal":"Số thập phân tuần hoàn",()=>({ap:()=>{ins("⟦⟧");S.pos--}})]]);m.cat=1;return m};
 const CATTOP=()=>{const L=S.lang,m=menu("Catalog",[[L?"Sci Constants":"Hằng số khoa học",()=>CSTC()],[L?"Unit Conversions":"Chuyển đổi đơn vị",()=>CONVC()],[L?"Engineering Symbols":"Ký hiệu kỹ thuật",()=>{const e=menu("ENG",ENGL);e.cat=1;return e}],[L?"Functions":"Hàm và ký hiệu",()=>{const f=menu("Functions",CATL());f.cat=1;return f}]]);m.cat=1;return m};
 function launch(i){const T=S.scr;S.st.push(T.t=="home"?T:S.scr);
  if(i==0)S.scr={t:"calc",sel:T.sel};
@@ -216,7 +227,7 @@ function press(a){const s=S.scr;if(S.off){if(a=="ON")S.off=0;return R()}
  if(a=="BACK"){if(S.st.length)S.scr=S.st.pop();else if(s.t!="home")S.scr={t:"home",sel:0};setEd();return R()}
  if(a=="SET"){if(!s.set){S.st.push(s);S.scr=SETM()}return R()}
  
- if(a=="CAT"||a=="SCAT"||a=="CONV"){let b;if(s.cat){do{b=S.st.pop()}while(b&&(b.cat||b.t=="menu"));if(!b){b={t:"calc",sel:0};S.ex="";S.pos=0;S.rs="";S.done=0}}else b=baseScr(s);S.st.push(b);S.scr=a=="CAT"?CATTOP():a=="CONV"?CONVC():CSTC();return R()}
+ if(a=="CAT"||a=="SCT"||a=="SCAT"||a=="CONV"){let b;if(s.cat){do{b=S.st.pop()}while(b&&(b.cat||b.t=="menu"));if(!b){b={t:"calc",sel:0};S.ex="";S.pos=0;S.rs="";S.done=0}}else b=baseScr(s);S.st.push(b);S.scr=a=="CAT"?CATTOP():a=="SCT"?SCTM():a=="CONV"?CONVC():CSTC();return R()}
  if(a=="TOOLS"){if(s.t=="menu"&&s.title=="TOOLS")return R();const b=baseScr(s);S.st.push(b);S.scr=menu("TOOLS",TL);return R()}
  if(a=="SCAT"){S.st.push(s);S.scr=CONST();return R()}
  if(a=="FUNC"){S.st.push(s);const o=FX();o.f[0].v=S.fx||"";S.scr=o;setEd();return R()}
@@ -271,7 +282,7 @@ function R(){const s=S.scr,L=$("#lcd");if(S.off){L.innerHTML="";return}
 const T=[["ON","",25,26,"ON"],["⌂","HOME",85,26,"HOME"],["⚙","SETTINGS",25,86,"SET"],["↩","",85,86,"BACK"],["↑","SHIFT",25,140,"SHIFT","sh"],["x→","VARIABLE",85,140,"VAR"],["f(x)","a b/c",141,140,"FUNC"],["CATALOG","",255,140,"CAT"],["...","TOOLS",313,140,"TOOLS"],
 ["▲","",198,30,"U"],["◀","",141,82,"L"],["OK","",198,82,"OK"],["▶","",255,82,"R"],["▼","",198,134,"D"]];
 T.forEach(k=>{const b=document.createElement("button");b.className="k"+(k[5]?" "+k[5]:"");b.textContent=k[0];if(k[0]=="CATALOG"){b.style.fontSize="7px";b.style.letterSpacing="-.2px"}b.style.left=k[2]+"px";b.style.top=k[3]+"px";
- b.onpointerdown=e=>{e.preventDefault();if(k[4]=="SHIFT"){S.sh=!S.sh;return R()}const a=S.sh&&k[4]=="CAT"?"":S.sh&&k[4]=="FUNC"?"MIX":k[4];S.sh=0;if(a)press(a);else R()};$("#t").appendChild(b);
+ b.onpointerdown=e=>{e.preventDefault();if(k[4]=="SHIFT"){S.sh=!S.sh;return R()}const a=S.sh&&k[4]=="CAT"?"SCT":S.sh&&k[4]=="FUNC"?"MIX":k[4];S.sh=0;if(a)press(a);else R()};$("#t").appendChild(b);
  if(k[1]){const l=document.createElement("div");l.className="l";l.textContent=k[1];if(k[1]=="a b/c")l.style.color="#ffc94d";l.style.left=k[2]+"px";l.style.top=(k[3]-26)+"px";$("#t").appendChild(l)}});
 
 {const p=document.createElement("button");p.className="k pill";p.style.left="313px";p.style.top="56px";p.innerHTML="▲<br>▼";
@@ -291,7 +302,7 @@ let SC=1;
 function fit(){const d=$("#d"),cs=getComputedStyle(document.documentElement),[W,H]=vw();d.style.transform="none";const a=H-parseFloat(cs.paddingTop)-parseFloat(cs.paddingBottom)-12;SC=Math.max(.2,Math.min(W/400,a/d.offsetHeight,1.6));d.style.transform="translateX(-50%) scale("+SC+")"}
 const refit=()=>{fit();ptFit()};addEventListener("resize",refit);addEventListener("orientationchange",()=>setTimeout(refit,250));addEventListener("pageshow",refit);if(window.visualViewport)visualViewport.addEventListener("resize",refit);
 const E=a=>a.replace('<span class="cur"></span>',"")===""?a+'<i class="bx"></i>':a;
-const lin=t=>t.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/\*/g,"×").replace(/\//g,"÷").replace(/ᴘ/g,"P").replace(/ᴄ/g,"C").replace(/ᴍ/g,"Mod").replace(/ᴇ([+-]?[\d\u0001]*)/g,"×10<sup>$1</sup>").replace(/\u0001/g,'<span class="cur"></span>');
+const lin=t=>t.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/\*/g,"×").replace(/\//g,"÷").replace(/ᴘ/g,"P").replace(/ᴄ/g,"C").replace(/ᴍ/g,"Mod").replace(/∂\(/g,"d/dx(").replace(/⟦([^⟧]*)⟧/g,'<span style="text-decoration:overline">$1</span>').replace(/ᴇ([+-]?[\d\u0001]*)/g,"×10<sup>$1</sup>").replace(/\u0001/g,'<span class="cur"></span>');
 const FRh=(a,b)=>'<span class="fr"><span>'+a+'</span><span>'+b+'</span></span>';
 function rich(s){let i=0;const mk=r=>({h:lin(r),r});
  function q(cl){const it=[];let b="";const f=()=>{if(b){it.push(mk(b));b=""}},g=()=>{i++;const a=q(1);if(s[i]=="⦄")i++;return a};
