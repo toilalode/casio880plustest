@@ -178,7 +178,6 @@ const CVD=[["Chiều dài","Length","in▶cm|*2.54,cm▶in|/2.54,ft▶m|*0.3048,
 const cv=op=>{const e=S.done?"Ans":(S.ex.trim()||"Ans");S.ex=op=="F2C"?"(("+e+")-32)*5/9":op=="C2F"?"("+e+")*9/5+32":"("+e+")"+op;S.pos=S.ex.length;S.done=0;S.rs="";if(S.scr.t=="form")S.scr.f[S.scr.i].v=S.ex};
 const CONVC=()=>{const m=menu("Unit Conversions",CVD.map(([vi,en,l])=>[S.lang?en:vi,()=>{const sm=menu(S.lang?en:vi,l.split(",").map(p=>{const[n,op]=p.split("|");return[n,()=>({ap:()=>cv(op)})]}));sm.cat=1;return sm}]));m.cat=1;return m};
 const ENGL=[["f  10⁻¹⁵","*10^(-15)"],["p  10⁻¹²","*10^(-12)"],["n  10⁻⁹","*10^(-9)"],["μ  10⁻⁶","*10^(-6)"],["m  10⁻³","*10^(-3)"],["k  10³","*10^(3)"],["M  10⁶","*10^(6)"],["G  10⁹","*10^(9)"],["T  10¹²","*10^(12)"],["P  10¹⁵","*10^(15)"],["E  10¹⁸","*10^(18)"]];
-const CLST=()=>{const m=menu(S.lang?"CATALOG list":"Danh sách CATALOG",CATL());m.cat=1;return m};
 const CATTOP=()=>{const L=S.lang,m=menu("Catalog",[[L?"Sci Constants":"Hằng số khoa học",()=>CSTC()],[L?"Unit Conversions":"Chuyển đổi đơn vị",()=>CONVC()],[L?"Engineering Symbols":"Ký hiệu kỹ thuật",()=>{const e=menu("ENG",ENGL);e.cat=1;return e}],[L?"Functions":"Hàm và ký hiệu",()=>{const f=menu("Functions",CATL());f.cat=1;return f}]]);m.cat=1;return m};
 function launch(i){const T=S.scr;S.st.push(T.t=="home"?T:S.scr);
  if(i==0)S.scr={t:"calc",sel:T.sel};
@@ -217,7 +216,7 @@ function press(a){const s=S.scr;if(S.off){if(a=="ON")S.off=0;return R()}
  if(a=="BACK"){if(S.st.length)S.scr=S.st.pop();else if(s.t!="home")S.scr={t:"home",sel:0};setEd();return R()}
  if(a=="SET"){if(!s.set){S.st.push(s);S.scr=SETM()}return R()}
  
- if(a=="CAT"||a=="CLST"||a=="SCAT"||a=="CONV"){let b;if(s.cat){do{b=S.st.pop()}while(b&&(b.cat||b.t=="menu"));if(!b){b={t:"calc",sel:0};S.ex="";S.pos=0;S.rs="";S.done=0}}else b=baseScr(s);S.st.push(b);S.scr=a=="CAT"?CATTOP():a=="CLST"?CLST():a=="CONV"?CONVC():CSTC();return R()}
+ if(a=="CAT"||a=="SCAT"||a=="CONV"){let b;if(s.cat){do{b=S.st.pop()}while(b&&(b.cat||b.t=="menu"));if(!b){b={t:"calc",sel:0};S.ex="";S.pos=0;S.rs="";S.done=0}}else b=baseScr(s);S.st.push(b);S.scr=a=="CAT"?CATTOP():a=="CONV"?CONVC():CSTC();return R()}
  if(a=="TOOLS"){if(s.t=="menu"&&s.title=="TOOLS")return R();const b=baseScr(s);S.st.push(b);S.scr=menu("TOOLS",TL);return R()}
  if(a=="SCAT"){S.st.push(s);S.scr=CONST();return R()}
  if(a=="FUNC"){S.st.push(s);const o=FX();o.f[0].v=S.fx||"";S.scr=o;setEd();return R()}
@@ -272,9 +271,8 @@ function R(){const s=S.scr,L=$("#lcd");if(S.off){L.innerHTML="";return}
 const T=[["ON","",25,26,"ON"],["⌂","HOME",85,26,"HOME"],["⚙","SETTINGS",25,86,"SET"],["↩","",85,86,"BACK"],["↑","SHIFT",25,140,"SHIFT","sh"],["x→","VARIABLE",85,140,"VAR"],["f(x)","a b/c",141,140,"FUNC"],["CATALOG","",255,140,"CAT"],["...","TOOLS",313,140,"TOOLS"],
 ["▲","",198,30,"U"],["◀","",141,82,"L"],["OK","",198,82,"OK"],["▶","",255,82,"R"],["▼","",198,134,"D"]];
 T.forEach(k=>{const b=document.createElement("button");b.className="k"+(k[5]?" "+k[5]:"");b.textContent=k[0];if(k[0]=="CATALOG"){b.style.fontSize="7px";b.style.letterSpacing="-.2px"}b.style.left=k[2]+"px";b.style.top=k[3]+"px";
- b.onpointerdown=e=>{e.preventDefault();if(k[4]=="SHIFT"){S.sh=!S.sh;return R()}const a=S.sh&&k[4]=="CAT"?"CLST":S.sh&&k[4]=="FUNC"?"MIX":k[4];S.sh=0;press(a)};$("#t").appendChild(b);
+ b.onpointerdown=e=>{e.preventDefault();if(k[4]=="SHIFT"){S.sh=!S.sh;return R()}const a=S.sh&&k[4]=="CAT"?"":S.sh&&k[4]=="FUNC"?"MIX":k[4];S.sh=0;if(a)press(a);else R()};$("#t").appendChild(b);
  if(k[1]){const l=document.createElement("div");l.className="l";l.textContent=k[1];if(k[1]=="a b/c")l.style.color="#ffc94d";l.style.left=k[2]+"px";l.style.top=(k[3]-26)+"px";$("#t").appendChild(l)}});
-{const l=document.createElement("div");l.className="l";l.style.color="#ffc94d";l.textContent="≡";l.style.left="236px";l.style.top="118px";$("#t").appendChild(l)}
 
 {const p=document.createElement("button");p.className="k pill";p.style.left="313px";p.style.top="56px";p.innerHTML="▲<br>▼";
  p.onpointerdown=e=>{e.preventDefault();const r=p.getBoundingClientRect();press(e.clientY<r.top+r.height/2?"PU":"PD")};$("#t").appendChild(p)}
