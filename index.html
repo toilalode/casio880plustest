@@ -11,7 +11,7 @@ html,body{margin:0;background:var(--bg);-webkit-user-select:none;user-select:non
 .cw{font-size:3cqw;text-align:right;letter-spacing:.7cqw;color:#2b3a2c;margin:6px 4px 0}
 .g{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5cqw;margin-top:1cqw}
 .c{text-align:center;font-size:4.6cqw;padding:.6cqw 0;line-height:1.15}.c i{font-style:normal;display:block;font-size:6cqw;font-weight:700}.c.s{background:#14180f;color:#c4cdbb}
-.m{white-space:nowrap;overflow:hidden}.m.s{background:#14180f;color:#c4cdbb}.r{text-align:right}.cur{border-left:2px solid #14180f;margin-left:-1px;animation:k 1s steps(1) infinite}@keyframes k{50%{border-color:transparent}}
+.m{white-space:nowrap;overflow:hidden}.m.s{background:#14180f;color:#c4cdbb}.r{text-align:right}.cur{display:inline-block;height:1.1em;vertical-align:middle;border-left:2px solid #14180f;margin-left:-1px;animation:k 1s steps(1) infinite}@keyframes k{50%{border-color:transparent}}
 #t{position:relative;height:172px;width:340px;margin:14px auto 0}
 .k{position:absolute;transform:translate(-50%,-50%);border:0;border-radius:50%;background:#2b2c30;color:#eee;font-size:14px;width:38px;height:38px;padding:0;touch-action:manipulation;box-shadow:0 2px 0 #000}
 .k:active{filter:brightness(1.6)}.k.sh{background:#c9a24a;color:#222}.k.pill{width:40px;height:84px;border-radius:20px}
@@ -42,7 +42,7 @@ sup{font-size:.6em;position:relative;top:-.55em;line-height:0}.rd{display:inline
 @container (max-width:600px){.el .nmx,.el .am{display:none}.el .sy{font-size:3.2cqw}.el .zn{font-size:1.6cqw}.lg{font-size:1.7cqw}.inf{font-size:1.8cqw}.it small{font-size:1.4cqw}.it b{font-size:4cqw}.inf b.nm{font-size:2.6cqw}}
 html,body,#pt,#pt *{touch-action:manipulation}#d,#d *{touch-action:none;-webkit-touch-callout:none}.w small{pointer-events:none}
 .m.ex{height:15cqw;display:flex;align-items:center;overflow:hidden}.mi{flex:none;white-space:nowrap;line-height:1.35}
-sup{position:static;top:auto;vertical-align:.9em;font-size:.6em;line-height:1}.rx{padding:.12em .1em 0}.rd{align-items:flex-end}.fr>span{padding:.04em .2em;line-height:1.15}
+sup{position:static;top:auto;display:inline-flex;align-items:center;vertical-align:.6em;font-size:.6em;line-height:1.1}.pw{display:inline-flex;align-items:center}.pw>sup{align-self:flex-start;vertical-align:baseline}.pw.pc{vertical-align:middle}.rd>sup{align-self:flex-start}.rx{padding:.12em .1em 0}.rd{align-items:flex-end}.fr>span{padding:.04em .2em;line-height:1.15}
 </style></head><body><div id="d"><div class="b1">CASIO</div><div class="b2">fx-880BTG PLUS</div>
 <div id="lw"><div id="lcd"></div></div><div class="cw">CLASSWIZ</div>
 <div id="t"></div><div id="kb"></div>
@@ -178,6 +178,7 @@ const CVD=[["Chiều dài","Length","in▶cm|*2.54,cm▶in|/2.54,ft▶m|*0.3048,
 const cv=op=>{const e=S.done?"Ans":(S.ex.trim()||"Ans");S.ex=op=="F2C"?"(("+e+")-32)*5/9":op=="C2F"?"("+e+")*9/5+32":"("+e+")"+op;S.pos=S.ex.length;S.done=0;S.rs="";if(S.scr.t=="form")S.scr.f[S.scr.i].v=S.ex};
 const CONVC=()=>{const m=menu("Unit Conversions",CVD.map(([vi,en,l])=>[S.lang?en:vi,()=>{const sm=menu(S.lang?en:vi,l.split(",").map(p=>{const[n,op]=p.split("|");return[n,()=>({ap:()=>cv(op)})]}));sm.cat=1;return sm}]));m.cat=1;return m};
 const ENGL=[["f  10⁻¹⁵","*10^(-15)"],["p  10⁻¹²","*10^(-12)"],["n  10⁻⁹","*10^(-9)"],["μ  10⁻⁶","*10^(-6)"],["m  10⁻³","*10^(-3)"],["k  10³","*10^(3)"],["M  10⁶","*10^(6)"],["G  10⁹","*10^(9)"],["T  10¹²","*10^(12)"],["P  10¹⁵","*10^(15)"],["E  10¹⁸","*10^(18)"]];
+const CLST=()=>{const m=menu(S.lang?"CATALOG list":"Danh sách CATALOG",CATL());m.cat=1;return m};
 const CATTOP=()=>{const L=S.lang,m=menu("Catalog",[[L?"Sci Constants":"Hằng số khoa học",()=>CSTC()],[L?"Unit Conversions":"Chuyển đổi đơn vị",()=>CONVC()],[L?"Engineering Symbols":"Ký hiệu kỹ thuật",()=>{const e=menu("ENG",ENGL);e.cat=1;return e}],[L?"Functions":"Hàm và ký hiệu",()=>{const f=menu("Functions",CATL());f.cat=1;return f}]]);m.cat=1;return m};
 function launch(i){const T=S.scr;S.st.push(T.t=="home"?T:S.scr);
  if(i==0)S.scr={t:"calc",sel:T.sel};
@@ -216,7 +217,7 @@ function press(a){const s=S.scr;if(S.off){if(a=="ON")S.off=0;return R()}
  if(a=="BACK"){if(S.st.length)S.scr=S.st.pop();else if(s.t!="home")S.scr={t:"home",sel:0};setEd();return R()}
  if(a=="SET"){if(!s.set){S.st.push(s);S.scr=SETM()}return R()}
  
- if(a=="CAT"||a=="SCAT"||a=="CONV"){let b;if(s.cat){do{b=S.st.pop()}while(b&&(b.cat||b.t=="menu"));if(!b){b={t:"calc",sel:0};S.ex="";S.pos=0;S.rs="";S.done=0}}else b=baseScr(s);S.st.push(b);S.scr=a=="CAT"?CATTOP():a=="CONV"?CONVC():CSTC();return R()}
+ if(a=="CAT"||a=="CLST"||a=="SCAT"||a=="CONV"){let b;if(s.cat){do{b=S.st.pop()}while(b&&(b.cat||b.t=="menu"));if(!b){b={t:"calc",sel:0};S.ex="";S.pos=0;S.rs="";S.done=0}}else b=baseScr(s);S.st.push(b);S.scr=a=="CAT"?CATTOP():a=="CLST"?CLST():a=="CONV"?CONVC():CSTC();return R()}
  if(a=="TOOLS"){if(s.t=="menu"&&s.title=="TOOLS")return R();const b=baseScr(s);S.st.push(b);S.scr=menu("TOOLS",TL);return R()}
  if(a=="SCAT"){S.st.push(s);S.scr=CONST();return R()}
  if(a=="FUNC"){S.st.push(s);const o=FX();o.f[0].v=S.fx||"";S.scr=o;setEd();return R()}
@@ -271,7 +272,7 @@ function R(){const s=S.scr,L=$("#lcd");if(S.off){L.innerHTML="";return}
 const T=[["ON","",25,26,"ON"],["⌂","HOME",85,26,"HOME"],["⚙","SETTINGS",25,86,"SET"],["↩","",85,86,"BACK"],["↑","SHIFT",25,140,"SHIFT","sh"],["x→","VARIABLE",85,140,"VAR"],["f(x)","a b/c",141,140,"FUNC"],["CATALOG","",255,140,"CAT"],["...","TOOLS",313,140,"TOOLS"],
 ["▲","",198,30,"U"],["◀","",141,82,"L"],["OK","",198,82,"OK"],["▶","",255,82,"R"],["▼","",198,134,"D"]];
 T.forEach(k=>{const b=document.createElement("button");b.className="k"+(k[5]?" "+k[5]:"");b.textContent=k[0];if(k[0]=="CATALOG"){b.style.fontSize="7px";b.style.letterSpacing="-.2px"}b.style.left=k[2]+"px";b.style.top=k[3]+"px";
- b.onpointerdown=e=>{e.preventDefault();if(k[4]=="SHIFT"){S.sh=!S.sh;return R()}const a=S.sh&&k[4]=="CAT"?"SCAT":S.sh&&k[4]=="FUNC"?"MIX":k[4];S.sh=0;press(a)};$("#t").appendChild(b);
+ b.onpointerdown=e=>{e.preventDefault();if(k[4]=="SHIFT"){S.sh=!S.sh;return R()}const a=S.sh&&k[4]=="CAT"?"CLST":S.sh&&k[4]=="FUNC"?"MIX":k[4];S.sh=0;press(a)};$("#t").appendChild(b);
  if(k[1]){const l=document.createElement("div");l.className="l";l.textContent=k[1];if(k[1]=="a b/c")l.style.color="#ffc94d";l.style.left=k[2]+"px";l.style.top=(k[3]-26)+"px";$("#t").appendChild(l)}});
 {const l=document.createElement("div");l.className="l";l.style.color="#ffc94d";l.textContent="≡";l.style.left="236px";l.style.top="118px";$("#t").appendChild(l)}
 
@@ -294,13 +295,25 @@ const refit=()=>{fit();ptFit()};addEventListener("resize",refit);addEventListene
 const E=a=>a.replace('<span class="cur"></span>',"")===""?a+'<i class="bx"></i>':a;
 const lin=t=>t.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/\*/g,"×").replace(/\//g,"÷").replace(/ᴘ/g,"P").replace(/ᴄ/g,"C").replace(/ᴍ/g,"Mod").replace(/ᴇ([+-]?[\d\u0001]*)/g,"×10<sup>$1</sup>").replace(/\u0001/g,'<span class="cur"></span>');
 const FRh=(a,b)=>'<span class="fr"><span>'+a+'</span><span>'+b+'</span></span>';
-function rich(s){let i=0;function q(cl){let o="",b="";const f=()=>{if(b){o+=lin(b);b=""}},g=()=>{i++;const a=q(1);if(s[i]=="⦄")i++;return a};
- while(i<s.length){const c=s[i];if(c=="⦄"){if(cl)break;i++;continue}
-  if(c=="⦃"){f();const a=g();if(s[i]=="ᵐ"&&s[i+1]=="⦃"){i++;const b=g();let d="";if(s[i]=="⁄"&&s[i+1]=="⦃"){i++;d=g()}o+=E(a)+FRh(E(b),E(d))}else if(s[i]=="⁄"&&s[i+1]=="⦃"){i++;o+=FRh(E(a),E(g()))}else o+=a;continue}
-  if(c=="^"&&s[i+1]=="⦃"){f();i++;o+="<sup>"+E(g())+"</sup>";continue}
-  if(c=="√"&&s[i+1]=="⦃"){f();i++;o+='<span class="rd">√<span class="rx">'+E(g())+"</span></span>";continue}
-  if(c=="³"&&s[i+1]=="√"&&s[i+2]=="⦃"){f();i+=2;o+='<span class="rd"><sup>3</sup>√<span class="rx">'+E(g())+"</span></span>";continue}
-  b+=c;i++}f();return o}return q(0)}
+function rich(s){let i=0;const mk=r=>({h:lin(r),r});
+ function q(cl){const it=[];let b="";const f=()=>{if(b){it.push(mk(b));b=""}},g=()=>{i++;const a=q(1);if(s[i]=="⦄")i++;return a};
+  const fp=()=>{let d=0;for(let a=it.length-1;a>=0;a--){const x=it[a];if(x.r===undefined)continue;const r=x.r.replace(/\u0001/g,"");for(let p=r.length-1;p>=0;p--){if(r[p]==")")d++;else if(r[p]=="("&&--d==0)return[a,x.r.indexOf("(",0)<0?0:nth(x.r,p)]}}return null};
+  const nth=(raw,p)=>{let k=-1,n=0;for(let c=0;c<raw.length;c++){if(raw[c]=="\u0001")continue;if(n==p){k=c;break}n++}return k};
+  const pwr=e=>{f();let bs=[];const L=it[it.length-1];
+   if(L&&L.r!==undefined){const t=L.r.match(/\u0001*$/)[0],c=L.r.slice(0,L.r.length-t.length),m=c.match(/(\d+\.?\d*|\.\d+|PreAns|Ans|[A-Za-zπ])$/);
+    if(m){it.pop();const hd=c.slice(0,c.length-m[0].length);if(hd)it.push(mk(hd));bs=[mk(m[0]+t)]}
+    else if(c.endsWith(")")){const r=fp();if(r){bs=it.splice(r[0]);const h=bs[0].r.slice(0,r[1]);if(h)it.push(mk(h));bs[0]=mk(bs[0].r.slice(r[1]))}}}
+   else if(L){bs=[it.pop()]}
+   const pc=bs.some(x=>x.r===undefined);
+   it.push({h:bs.length?'<span class="pw'+(pc?" pc":"")+'">'+bs.map(x=>x.h).join("")+"<sup>"+e+"</sup></span>":"<sup>"+e+"</sup>"})};
+  while(i<s.length){const c=s[i];if(c=="⦄"){if(cl)break;i++;continue}
+   if(c=="⦃"){f();const a=g();if(s[i]=="ᵐ"&&s[i+1]=="⦃"){i++;const w=g();let d="";if(s[i]=="⁄"&&s[i+1]=="⦃"){i++;d=g()}it.push({h:E(a)+FRh(E(w),E(d))})}else if(s[i]=="⁄"&&s[i+1]=="⦃"){i++;it.push({h:FRh(E(a),E(g()))})}else it.push({h:a});continue}
+   if(c=="^"&&s[i+1]=="⦃"){i++;pwr(E(g()));continue}
+   if(c=="√"&&s[i+1]=="⦃"){f();i++;it.push({h:'<span class="rd">√<span class="rx">'+E(g())+"</span></span>"});continue}
+   if(c=="³"&&s[i+1]=="√"&&s[i+2]=="⦃"){f();i+=2;it.push({h:'<span class="rd"><sup>3</sup>√<span class="rx">'+E(g())+"</span></span>"});continue}
+   b+=c;i++}
+  f();return it.map(x=>x.h).join("")}
+ return q(0)}
 const RH=s=>{if(S.dc)s=s.replace(/(\d)\.(\d)/g,"$1,$2");if(S.ds)s=s.replace(/(^|[^\d.,])(\d{4,})/g,(m,a,b)=>a+b.replace(/\B(?=(\d{3})+$)/g,S.dc?".":","));if(/⦃/.test(s))return rich(s);s=s.replace(/&/g,"&amp;").replace(/</g,"&lt;");let m=s.match(/^(-?)(\d+) (\d+)\/(\d+)$/);if(m)return m[1]+m[2]+FRh(m[3],m[4]);m=s.match(/^(-?)(\d+)\/(\d+)$/);if(m)return m[1]+FRh(m[2],m[3]);return s.replace(/×10\^(-?\d+)/,"×10<sup>$1</sup>").replace(/\^(-?\d+)/g,"<sup>$1</sup>").replace(/⟦(\d+)⟧/g,'<span style="text-decoration:overline">$1</span>').replace(/ᴇ/g,"E")};
 const okp=p=>{const s=S.ex;return!((s[p]=="√"&&s[p-1]=="³")||s[p]=="⁄"||s[p-1]=="⁄"||s[p]=="ᵐ"||s[p-1]=="ᵐ"||(s[p]=="⦃"&&/[\^√]/.test(s[p-1]||"")))};
 function mv(d){let p=S.pos+d;while(p>0&&p<S.ex.length&&!okp(p))p+=d;S.pos=Math.max(0,Math.min(S.ex.length,p))}
