@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="theme-color" content="#1b1c1f"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="fx-880BTG"><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="apple-touch-icon.png"><title>fx-880BTG PLUS</title>
+<!DOCTYPE html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover"><meta name="theme-color" content="#1b1c1f"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="fx-880BTG"><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="apple-touch-icon.png"><title>fx-880BTG PLUS</title>
 <style>
 :root{--bg:#d9d9dc;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 @media(prefers-color-scheme:dark){:root{--bg:#0e0e10}}
@@ -40,6 +40,7 @@ sup{font-size:.6em;position:relative;top:-.55em;line-height:0}.rd{display:inline
 .lg{grid-row:1;grid-column:3/18;display:flex;flex-wrap:wrap;gap:0 1.2cqw;align-content:center;font-size:.95cqw}.lg span{display:flex;align-items:center;gap:.3cqw;white-space:nowrap}.lg i{width:1.2cqw;height:1.2cqw;border-radius:2px}
 .inf{grid-row:2/4;grid-column:3/13;display:flex;align-items:center;gap:1.2cqw;font-size:1.2cqw;line-height:1.3;padding:0 1cqw;background:#ffffff0d;border-radius:6px}.it{flex:none;width:6.5cqw;height:90%;display:flex;flex-direction:column;align-items:center;justify-content:center;border-radius:4px}.it b{font-size:3cqw}.it small{font-size:.9cqw}.inf b.nm{font-size:2cqw}
 @container (max-width:600px){.el .nmx,.el .am{display:none}.el .sy{font-size:3.2cqw}.el .zn{font-size:1.6cqw}.lg{font-size:1.7cqw}.inf{font-size:1.8cqw}.it small{font-size:1.4cqw}.it b{font-size:4cqw}.inf b.nm{font-size:2.6cqw}}
+html,body,#pt,#pt *{touch-action:manipulation}#d,#d *{touch-action:none;-webkit-touch-callout:none}.w small{pointer-events:none}
 </style></head><body><div id="d"><div class="b1">CASIO</div><div class="b2">fx-880BTG PLUS</div>
 <div id="lw"><div id="lcd"></div></div><div class="cw">CLASSWIZ</div>
 <div id="t"></div><div id="kb"></div>
@@ -268,12 +269,12 @@ function R(){const s=S.scr,L=$("#lcd");if(S.off){L.innerHTML="";return}
 const T=[["ON","",25,26,"ON"],["⌂","HOME",85,26,"HOME"],["⚙","SETTINGS",25,86,"SET"],["↩","",85,86,"BACK"],["↑","SHIFT",25,140,"SHIFT","sh"],["x→","VARIABLE",85,140,"VAR"],["f(x)","a b/c",141,140,"FUNC"],["CATALOG","",255,140,"CAT"],["...","TOOLS",313,140,"TOOLS"],
 ["▲","",198,30,"U"],["◀","",141,82,"L"],["OK","",198,82,"OK"],["▶","",255,82,"R"],["▼","",198,134,"D"]];
 T.forEach(k=>{const b=document.createElement("button");b.className="k"+(k[5]?" "+k[5]:"");b.textContent=k[0];if(k[0]=="CATALOG"){b.style.fontSize="7px";b.style.letterSpacing="-.2px"}b.style.left=k[2]+"px";b.style.top=k[3]+"px";
- b.onclick=()=>{if(k[4]=="SHIFT"){S.sh=!S.sh;return R()}const a=S.sh&&k[4]=="CAT"?"SCAT":S.sh&&k[4]=="FUNC"?"MIX":k[4];S.sh=0;press(a)};$("#t").appendChild(b);
+ b.onpointerdown=e=>{e.preventDefault();if(k[4]=="SHIFT"){S.sh=!S.sh;return R()}const a=S.sh&&k[4]=="CAT"?"SCAT":S.sh&&k[4]=="FUNC"?"MIX":k[4];S.sh=0;press(a)};$("#t").appendChild(b);
  if(k[1]){const l=document.createElement("div");l.className="l";l.textContent=k[1];if(k[1]=="a b/c")l.style.color="#ffc94d";l.style.left=k[2]+"px";l.style.top=(k[3]-26)+"px";$("#t").appendChild(l)}});
 {const l=document.createElement("div");l.className="l";l.style.color="#ffc94d";l.textContent="≡";l.style.left="236px";l.style.top="118px";$("#t").appendChild(l)}
 
 {const p=document.createElement("button");p.className="k pill";p.style.left="313px";p.style.top="56px";p.innerHTML="▲<br>▼";
- p.onclick=e=>{const r=p.getBoundingClientRect();press(e.clientY<r.top+r.height/2?"PU":"PD")};$("#t").appendChild(p)}
+ p.onpointerdown=e=>{e.preventDefault();const r=p.getBoundingClientRect();press(e.clientY<r.top+r.height/2?"PU":"PD")};$("#t").appendChild(p)}
 // [label, gold, main, shift]
 const rows=[[6,[["x","CONST","i:x","SCAT"],["□/□","CONV","FRAC","CONV"],["√□","³√","i:√⦃⦄","i:³√⦃⦄"],["x■","x⁻¹","i:^⦃⦄","i:^⦃-1⦄"],["x²","log","i:^⦃2⦄","i:log("],["log□","ln","i:log(","i:ln("]]],
 [6,[["Ans","PreAns","i:Ans","i:PreAns"],["sin","sin⁻¹","i:sin(","i:asin("],["cos","cos⁻¹","i:cos(","i:acos("],["tan","tan⁻¹","i:tan(","i:atan("],["(","=","i:(","i:="],[")",",","i:)","i:,"]]],
@@ -284,7 +285,7 @@ const rows=[[6,[["x","CONST","i:x","SCAT"],["□/□","CONV","FRAC","CONV"],["�
 rows.forEach(([n,ks])=>{const r=document.createElement("div");r.className="rw r"+n;ks.forEach(k=>{const w=document.createElement("div");w.className="w";
  if(k[1]){const g=document.createElement("small");g.textContent=k[1];w.appendChild(g)}
  const b=document.createElement("button");b.textContent=k[0];if(n==5&&k[0].length>2)b.style.fontSize="10px";if(k[2]=="AC"||k[2]=="DEL"){b.className="ac";b.style.fontSize="13px"}
- b.onclick=()=>{const a=S.sh?k[3]:k[2];S.sh=0;if(a)press(a);else R()};w.appendChild(b);r.appendChild(w)});$("#kb").appendChild(r)});
+ b.onpointerdown=e=>{e.preventDefault();const a=S.sh?k[3]:k[2];S.sh=0;if(a)press(a);else R()};w.appendChild(b);r.appendChild(w)});$("#kb").appendChild(r)});
 let SC=1;
 function fit(){const d=$("#d"),cs=getComputedStyle(document.documentElement),[W,H]=vw();d.style.transform="none";const a=H-parseFloat(cs.paddingTop)-parseFloat(cs.paddingBottom)-12;SC=Math.max(.2,Math.min(W/400,a/d.offsetHeight,1.6));d.style.transform="translateX(-50%) scale("+SC+")"}
 const refit=()=>{fit();ptFit()};addEventListener("resize",refit);addEventListener("orientationchange",()=>setTimeout(refit,250));addEventListener("pageshow",refit);if(window.visualViewport)visualViewport.addEventListener("resize",refit);
@@ -348,6 +349,7 @@ function RF(v,m){if(Array.isArray(v)||m=="rect"||m=="pol")return CF(Array.isArra
  return r}finally{S.frac=f}}
 const FMM=()=>{const L=S.lang,m=menu("FORMAT",[["Decimal","Thập phân","dec"],["Standard","Chuẩn (phân số)","std"],["Mixed number","Hỗn số","mix"],["Improper fraction","Phân số","std"],["Prime factors","Phân tích TSNT","pf"],["Engineering","Ký hiệu kỹ thuật","eng"],["Sexagesimal °′″","Độ phút giây","dms"],["Recurring decimal","Số thập phân tuần hoàn","rec"],["Standard form a×10ⁿ","Dạng a×10ⁿ","sci"],["Rectangular coord","Tọa độ vuông góc","rect"],["Polar coord","Tọa độ cực","pol"]].map(x=>[L?x[0]:x[1],x[2]]));m.fmt=1;return m};
 const SETM=()=>{const t=(e,v)=>S.lang?e:v,m=menu("Settings",[["⇄ Angle: "+["Degree","Radian","Gradian"][S.ang],()=>{S.ang=(S.ang+1)%3}],["⇄ Output: "+(S.frac?"Math":"Decimal"),()=>{S.frac=S.frac?0:1}],["⇄ "+t("Format: ","Định dạng: ")+["Norm","Fix","Sci"][S.nm],()=>{S.nm=(S.nm+1)%3}],["⇄ "+t("Digits: ","Số chữ số: ")+S.nd,()=>{S.nd=(S.nd+1)%10}],["⇄ "+t("Fraction: ","Phân số: ")+(S.mx?t("Mixed","Hỗn số"):t("Improper","Thường")),()=>{S.mx=!S.mx}],["⇄ "+t("Decimal mark: ","Dấu thập phân: ")+(S.dc?t("Comma","Phẩy"):t("Dot","Chấm")),()=>{S.dc=!S.dc}],["⇄ "+t("Separator: ","Phân cách nghìn: ")+(S.ds?t("On","Bật"):t("Off","Tắt")),()=>{S.ds=!S.ds}],["⇄ "+t("Complex: ","Số phức: ")+(S.cp?"r∠θ":"a+bi"),()=>{S.cp=!S.cp}],["⇄ "+(S.lang?"Language: English":"Ngôn ngữ: Tiếng Việt"),()=>{S.lang=S.lang?0:1}],["↺ "+t("Reset settings","Đặt lại cài đặt"),()=>{Object.assign(S,{ang:0,frac:1,nm:0,nd:3,mx:0,dc:0,ds:0,cp:0})}]]);m.set=1;return m};
+["gesturestart","gesturechange","gestureend"].forEach(n=>document.addEventListener(n,e=>e.preventDefault()));document.addEventListener("touchmove",e=>{if(e.touches.length>1)e.preventDefault()},{passive:false});let lt=0;document.addEventListener("touchend",e=>{const n=Date.now();if(n-lt<350)e.preventDefault();lt=n},{passive:false});
 R();fit();setTimeout(fit,300);addEventListener("load",()=>{fit();setTimeout(fit,500)});
 if("serviceWorker"in navigator)addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}));
 </script></body></html>
