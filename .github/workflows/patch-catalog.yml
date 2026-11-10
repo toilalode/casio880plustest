@@ -23,9 +23,9 @@ jobs:
            if(n=="Rec"){if(P.length!=2)throw 0;const r=E(P[0],xv),t=E(P[1],xv)*[Math.PI/180,1,Math.PI/200][S.ang];S.V.x=r*Math.cos(t);S.V.y=r*Math.sin(t);return S.V.x}
            '''
           s=s.replace(old,add+old,1)
-          o2='(∂|∫|Σ|Π|Rem|GCD|LCM|logab|RanInt#)\\\\('
+          o2='|logab|RanInt#)\\('
           assert o2 in s
-          s=s.replace(o2,'(∂|∫|Σ|Π|Rem|GCD|LCM|Pol|Rec|logab|RanInt#)\\\\(',1)
+          s=s.replace(o2,'|Pol|Rec|logab|RanInt#)\\(',1)
           open(p,'w',encoding='utf-8').write(s)
           PY
           git config user.name "github-actions"
