@@ -1,0 +1,36 @@
+name: patch-catalog
+on: workflow_dispatch
+permissions:
+  contents: write
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Patch index.html
+        run: |
+          python3 - <<'PY'
+          p='index.html'
+          s=open(p,encoding='utf-8').read()
+          a=s.index('const SCTM=()=>{')
+          endm='m.cat=1;m.list=1;return m};'
+          b=s.index(endm,a)+len(endm)
+          new='''const SCTM=()=>{const R5=Math.random,m=menu("CATALOG List",[["d/dx(","∂("],["∫(","∫("],["Σ(","Σ("],["Π(","Π("],["÷R","ʀ"],["logab(","logab("],["log(","log("],["ln(","ln("],["%","%"],["!","!"],["P","ᴘ"],["C","ᴄ"],["Ran#",()=>String(+R5().toFixed(3))],["RanInt#(","RanInt#("],["GCD(","GCD("],["LCM(","LCM("],["Abs(","abs("],["0.⟦⟧",()=>({ap:()=>{ins("⟦⟧");S.pos--}})],["Int(","int("],["Rnd(","round("],["Intg(","floor("],["Ceil(","ceil("],["Sign(","sign("],["Mod","ᴍ"],["Pol(","Pol("],["Rec(","Rec("],["Ans","Ans"],["sinh(","sinh("],["cosh(","cosh("],["tanh(","tanh("]]);m.cat=1;m.list=1;return m};'''
+          s=s[:a]+new+s[b:]
+          old='if(n=="RanInt#"){'
+          assert old in s
+          add='''if(n=="Pol"){if(P.length!=2)throw 0;const a=E(P[0],xv),b=E(P[1],xv),k=[Math.PI/180,1,Math.PI/200][S.ang],r=Math.hypot(a,b);S.V.x=r;S.V.y=Math.atan2(b,a)/k;return r}
+           if(n=="Rec"){if(P.length!=2)throw 0;const r=E(P[0],xv),t=E(P[1],xv)*[Math.PI/180,1,Math.PI/200][S.ang];S.V.x=r*Math.cos(t);S.V.y=r*Math.sin(t);return S.V.x}
+           '''
+          s=s.replace(old,add+old,1)
+          o2='(∂|∫|Σ|Π|Rem|GCD|LCM|logab|RanInt#)\\\\('
+          assert o2 in s
+          s=s.replace(o2,'(∂|∫|Σ|Π|Rem|GCD|LCM|Pol|Rec|logab|RanInt#)\\\\(',1)
+          open(p,'w',encoding='utf-8').write(s)
+          PY
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git rm -q .github/workflows/patch-catalog.yml
+          git add index.html
+          git commit -m "Shift+Catalog: đúng 2 trang (30 mục) theo ảnh"
+          git push
