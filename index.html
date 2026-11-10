@@ -61,6 +61,8 @@ function SPF(n,P,xv){const E=(t,x)=>ev(t,x);const I=t=>{const v=E(t,xv);if(v%1)t
  if(n=="∫"){if(P.length!=3)throw 0;const a=E(P[1],xv),b=E(P[2],xv),N=2000,h=(b-a)/N,f=x=>E(P[0],x);let t=f(a)+f(b);for(let k=1;k<N;k++)t+=f(a+k*h)*(k%2?4:2);return t*h/3}
  if(n=="Σ"||n=="Π"){if(P.length!=3)throw 0;const a=I(P[1]),b=I(P[2]);if(b-a>1e6)throw 1;let t=n=="Σ"?0:1;for(let k=a;k<=b;k++){const v=E(P[0],k);t=n=="Σ"?t+v:t*v}return t}
  if(n=="logab"){if(P.length!=2)throw 0;const a=E(P[0],xv),b=E(P[1],xv);if(a<=0||a==1||b<=0)throw 1;return Math.log(b)/Math.log(a)}
+ if(n=="Pol"){if(P.length!=2)throw 0;const a=E(P[0],xv),b=E(P[1],xv),k=[Math.PI/180,1,Math.PI/200][S.ang],r=Math.hypot(a,b);S.V.x=r;S.V.y=Math.atan2(b,a)/k;return r}
+ if(n=="Rec"){if(P.length!=2)throw 0;const r=E(P[0],xv),t=E(P[1],xv)*[Math.PI/180,1,Math.PI/200][S.ang];S.V.x=r*Math.cos(t);S.V.y=r*Math.sin(t);return S.V.x}
  if(n=="RanInt#"){if(P.length!=2)throw 0;const a=I(P[0]),b=I(P[1]);if(b<a)throw 1;return a+Math.floor(Math.random()*(b-a+1))}
  throw 0}
 function ev(src,xv){src=src.replace(/(\d*)\.(\d*)⟦(\d+)⟧/g,(m,I,N,R)=>"(("+(I||0)+")+("+(parseInt(N+R)-(N?parseInt(N):0))+")/("+10**N.length*(10**R.length-1)+"))").replace(/⦃([^⦃⦄]*)⦄ᵐ⦃([^⦃⦄]*)⦄⁄⦃([^⦃⦄]*)⦄/g,"(($1)+($2)/($3))").replace(/⦃/g,"(").replace(/⦄/g,")").replace(/⁄/g,"/");
@@ -75,7 +77,7 @@ function ev(src,xv){src=src.replace(/(\d*)\.(\d*)⟦(\d+)⟧/g,(m,I,N,R)=>"(("+(
  function po(){let v=pr();while(pk()=="!"||pk()=="%"){v=s[i++]=="!"?F(v):v/100}return v}
  function pr(){
   if(pk()=="("){i++;const v=ex();if(pk()==")")i++;return v}
-  let m=s.slice(i).match(/^(∂|∫|Σ|Π|Rem|GCD|LCM|logab|RanInt#)\(/);
+  let m=s.slice(i).match(/^(∂|∫|Σ|Π|Rem|GCD|LCM|Pol|Rec|logab|RanInt#)\(/);
   if(m){i+=m[0].length;let d=1,st=i;const P=[];for(;i<s.length;i++){const c=s[i];if(c=="(")d++;else if(c==")"){if(--d==0)break}else if(c==","&&d==1){P.push(s.slice(st,i));st=i+1}}P.push(s.slice(st,i));if(s[i]==")")i++;return SPF(m[1],P,xv)}
   m=s.slice(i).match(/^(asinh|acosh|atanh|ceil|int|sinh|cosh|tanh|floor|round|sign|asin|acos|atan|sin|cos|tan|log|ln|abs|³√|√|e\^|10\^)\(/);
   if(m){i+=m[0].length;const a=ex();if(pk()==")")i++;
@@ -192,7 +194,7 @@ const CVD=[["Chiều dài","Length","in▶cm|*2.54,cm▶in|/2.54,ft▶m|*0.3048,
 const cv=op=>{const e=S.done?"Ans":(S.ex.trim()||"Ans");S.ex=op=="F2C"?"(("+e+")-32)*5/9":op=="C2F"?"("+e+")*9/5+32":"("+e+")"+op;S.pos=S.ex.length;S.done=0;S.rs="";if(S.scr.t=="form")S.scr.f[S.scr.i].v=S.ex};
 const CONVC=()=>{const m=menu("Unit Conversions",CVD.map(([vi,en,l])=>[S.lang?en:vi,()=>{const sm=menu(S.lang?en:vi,l.split(",").map(p=>{const[n,op]=p.split("|");return[n,()=>({ap:()=>cv(op)})]}));sm.cat=1;return sm}]));m.cat=1;return m};
 const ENGL=[["f  10⁻¹⁵","*10^(-15)"],["p  10⁻¹²","*10^(-12)"],["n  10⁻⁹","*10^(-9)"],["μ  10⁻⁶","*10^(-6)"],["m  10⁻³","*10^(-3)"],["k  10³","*10^(3)"],["M  10⁶","*10^(6)"],["G  10⁹","*10^(9)"],["T  10¹²","*10^(12)"],["P  10¹⁵","*10^(15)"],["E  10¹⁸","*10^(18)"]];
-const SCTM=()=>{const R5=Math.random,m=menu("CATALOG List",[["d/dx(","∂("],["∫(","∫("],["Σ(","Σ("],["Π(","Π("],["÷R","ʀ"],["logab(","logab("],["log(","log("],["ln(","ln("],["%","%"],["!","!"],["P","ᴘ"],["C","ᴄ"],["Ran#",()=>String(+R5().toFixed(3))],["RanInt#(","RanInt#("],["GCD(","GCD("],["LCM(","LCM("],["0.⟦⟧",()=>({ap:()=>{ins("⟦⟧");S.pos--}})],["abs(","abs("],["int(","int("],["round(","round("],["floor(","floor("],["sin(","sin("],["cos(","cos("],["tan(","tan("],["asin(","asin("],["acos(","acos("],["atan(","atan("],["sinh(","sinh("],["cosh(","cosh("],["tanh(","tanh("],["asinh(","asinh("],["acosh(","acosh("],["atanh(","atanh("],["Ans","Ans"],["PreAns","PreAns"],["π","π"],["e","e"],["√","√⦃⦄"],["³√","³√⦃⦄"],["x⁻¹","^⦃-1⦄"],["x²","^⦃2⦄"]]);m.cat=1;m.list=1;return m};
+const SCTM=()=>{const R5=Math.random,m=menu("CATALOG List",[["d/dx(","∂("],["∫(","∫("],["Σ(","Σ("],["Π(","Π("],["÷R","ʀ"],["logab(","logab("],["log(","log("],["ln(","ln("],["%","%"],["!","!"],["P","ᴘ"],["C","ᴄ"],["Ran#",()=>String(+R5().toFixed(3))],["RanInt#(","RanInt#("],["GCD(","GCD("],["LCM(","LCM("],["Abs(","abs("],["0.⟦⟧",()=>({ap:()=>{ins("⟦⟧");S.pos--}})],["Int(","int("],["Rnd(","round("],["Intg(","floor("],["Ceil(","ceil("],["Sign(","sign("],["Mod","ᴍ"],["Pol(","Pol("],["Rec(","Rec("],["Ans","Ans"],["sinh(","sinh("],["cosh(","cosh("],["tanh(","tanh("]]);m.cat=1;m.list=1;return m};
 const CATTOP=()=>{const L=S.lang,m=menu("Catalog",[[L?"Sci Constants":"Hằng số khoa học",()=>CSTC()],[L?"Unit Conversions":"Chuyển đổi đơn vị",()=>CONVC()],[L?"Engineering Symbols":"Ký hiệu kỹ thuật",()=>{const e=menu("ENG",ENGL);e.cat=1;return e}],[L?"Functions":"Hàm và ký hiệu",()=>{const f=menu("Functions",CATL());f.cat=1;return f}]]);m.cat=1;return m};
 function launch(i){const T=S.scr;S.st.push(T.t=="home"?T:S.scr);
  if(i==0)S.scr={t:"calc",sel:T.sel};
