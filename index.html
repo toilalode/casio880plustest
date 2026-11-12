@@ -196,7 +196,7 @@ const cv=op=>{const e=S.done?"Ans":(S.ex.trim()||"Ans");S.ex=op=="F2C"?"(("+e+")
 const CONVC=()=>{const m=menu("Unit Conversions",CVD.map(([vi,en,l])=>[S.lang?en:vi,()=>{const sm=menu(S.lang?en:vi,l.split(",").map(p=>{const[n,op]=p.split("|");return[n,()=>({ap:()=>cv(op)})]}));sm.cat=1;return sm}]));m.cat=1;return m};
 const ENGL=[["f  10⁻¹⁵","*10^(-15)"],["p  10⁻¹²","*10^(-12)"],["n  10⁻⁹","*10^(-9)"],["μ  10⁻⁶","*10^(-6)"],["m  10⁻³","*10^(-3)"],["k  10³","*10^(3)"],["M  10⁶","*10^(6)"],["G  10⁹","*10^(9)"],["T  10¹²","*10^(12)"],["P  10¹⁵","*10^(15)"],["E  10¹⁸","*10^(18)"]];
 const SCTM=()=>{const m=menu("CATALOG List",[["d/dx(","∂("],["∫(","∫("],["Σ(","Σ("],["Π(","Π("],["÷R","ʀ"],["logab(","logab("],["log(","log("],["ln(","ln("],["%","%"],["!","!"],["P","ᴘ"],["C","ᴄ"],["Ran#",()=>String(+Math.random().toFixed(3))],["RanInt#(","RanInt#("],["GCD(","GCD("],["LCM(","LCM("],["Abs(","abs⦃⦄"],["⟦▯⟧",()=>({ap:()=>{ins("⟦⟧");S.pos--}})],["Int(","int("],["Rnd(","rnd("],["Intg(","floor("],["°","°"],["ʳ","ʳ"],["ᵍ","ᵍ"],["Pol(","Pol("],["Rec(","Rec("],["°′″",()=>({ap:()=>{ins("°′″");S.pos-=2}})],["sinh(","sinh("],["cosh(","cosh("],["tanh(","tanh("]]);m.cat=1;m.list=1;return m};
-const CATTOP=()=>{const L=S.lang,m=menu("Catalog",[[L?"Sci Constants":"Hằng số khoa học",()=>CSTC()],[L?"Unit Conversions":"Chuyển đổi đơn vị",()=>CONVC()],[L?"Engineering Symbols":"Ký hiệu kỹ thuật",()=>{const e=menu("ENG",ENGL);e.cat=1;return e}],[L?"Functions":"Hàm và ký hiệu",()=>{const f=menu("Functions",CATL());f.cat=1;return f}],["CALC",()=>({ap:CALCRUN})],["SOLVE",()=>({ap:SOLVERUN})]]);m.cat=1;return m};
+const CATTOP=()=>{const L=S.lang,m=menu("Catalog",[[L?"Sci Constants":"Hằng số khoa học",()=>CSTC()],[L?"Unit Conversions":"Chuyển đổi đơn vị",()=>CONVC()],[L?"Engineering Symbols":"Ký hiệu kỹ thuật",()=>{const e=menu("ENG",ENGL);e.cat=1;return e}],[L?"Functions":"Hàm và ký hiệu",()=>{const f=menu("Functions",CATL());f.cat=1;return f}]]);m.cat=1;return m};
 const plainX=t=>disp(t.replace(/⦃/g,"(").replace(/⦄/g,")").replace(/ᵐ/g,"+").replace(/⁄/g,"/")),vs3=e=>["x","y","z"].filter(c=>e.includes(c)),evA=e=>isC(e)?evc(e):ev(e);
 function solveRoots(L,R,c,g){const sv=S.V[c],f=t=>{S.V[c]=t;try{const v=ev(L)-(R===null?0:ev(R));return isFinite(v)?v:NaN}catch(x){return NaN}};
  try{const o=[],add=r=>{if(isFinite(r)&&!o.some(q=>Math.abs(q-r)<=1e-7*Math.max(1,Math.abs(r))))o.push(r)},
@@ -261,7 +261,7 @@ function press(a){const s=S.scr;if(S.off){if(a=="ON")S.off=0;return R()}
  if(a=="HOME"){S.st=[];S.scr={t:"home",sel:s.sel||0};return R()}
  if(a=="BACK"){if(S.st.length)S.scr=S.st.pop();else if(s.t!="home")S.scr={t:"home",sel:0};setEd();{const k=S.scr.keep;if(k){S.ex=k.ex;S.pos=k.pos;S.done=k.done;S.rs=k.rs;delete S.scr.keep}}return R()}
  if(a=="SET"){if(!s.set){S.st.push(s);S.scr=SETM()}return R()}
- 
+ if(a=="CALC"||a=="SOLVE"){if(a=="CALC")CALCRUN();else SOLVERUN();return R()}
  if(a=="CAT"||a=="SCT"||a=="SCAT"||a=="CONV"){let b;if(s.cat){do{b=S.st.pop()}while(b&&(b.cat||b.t=="menu"));if(!b){b={t:"calc",sel:0};S.ex="";S.pos=0;S.rs="";S.done=0}}else b=baseScr(s);S.st.push(b);S.scr=a=="CAT"?CATTOP():a=="SCT"?SCTM():a=="CONV"?CONVC():CSTC();return R()}
  if(a=="TOOLS"){if(s.t=="menu"&&s.title=="TOOLS")return R();const b=baseScr(s);S.st.push(b);S.scr=menu("TOOLS",TL);return R()}
  if(a=="SCAT"){S.st.push(s);S.scr=CONST();return R()}
@@ -324,7 +324,7 @@ T.forEach(k=>{const b=document.createElement("button");b.className="k"+(k[5]?" "
 {const p=document.createElement("button");p.className="k pill";p.style.left="313px";p.style.top="56px";p.innerHTML="▲<br>▼";
  p.onpointerdown=e=>{e.preventDefault();const r=p.getBoundingClientRect();press(e.clientY<r.top+r.height/2?"PU":"PD")};$("#t").appendChild(p)}
 // [label, gold, main, shift]
-const rows=[[6,[["CONST","CONV","SCAT","CONV"],["□/□","a b/c","FRAC","MIX"],["√□","³√","i:√⦃⦄","i:³√⦃⦄"],["x■","x⁻¹","i:^⦃⦄","i:^⦃-1⦄"],["x²","log","i:^⦃2⦄","i:log("],["log□","ln","i:log(","i:ln("]]],
+const rows=[[6,[["CALC","SOLVE","CALC","SOLVE"],["□/□","a b/c","FRAC","MIX"],["√□","³√","i:√⦃⦄","i:³√⦃⦄"],["x■","x⁻¹","i:^⦃⦄","i:^⦃-1⦄"],["x²","log","i:^⦃2⦄","i:log("],["log□","ln","i:log(","i:ln("]]],
 [6,[["Ans","PreAns","i:Ans","i:PreAns"],["sin","sin⁻¹","i:sin(","i:asin("],["cos","cos⁻¹","i:cos(","i:acos("],["tan","tan⁻¹","i:tan(","i:atan("],["(","=","i:(","i:="],[")",",","i:)","i:,"]]],
 [5,[["7","π","i:7","i:π"],["8","e","i:8","i:e"],["9","i","i:9","i:i"],["DEL","INS","DEL"],["AC","OFF","AC","OFF"]]],
 [5,[["4","A","i:4","i:A"],["5","B","i:5","i:B"],["6","C","i:6","i:C"],["×","|□|","i:*","i:abs⦃⦄"],["÷","%","i:/","i:%"]]],
@@ -332,7 +332,7 @@ const rows=[[6,[["CONST","CONV","SCAT","CONV"],["□/□","a b/c","FRAC","MIX"],
 [5,[["0","x","i:0","i:x"],[".","y","i:.","i:y"],["×10■","z","i:ᴇ","i:z"],["FORMAT","⇄","FMT","SFMT"],["EXE","≈","EXE","DEC"]]]];
 rows.forEach(([n,ks])=>{const r=document.createElement("div");r.className="rw r"+n;ks.forEach(k=>{const w=document.createElement("div");w.className="w";
  if(k[1]){const g=document.createElement("small");g.textContent=k[1];w.appendChild(g)}
- const b=document.createElement("button");b.textContent=k[0];if(n==5&&k[0].length>2)b.style.fontSize="10px";if(k[0]=="CONST")b.style.fontSize="9px";if(k[2]=="AC"||k[2]=="DEL"){b.className="ac";b.style.fontSize="13px"}
+ const b=document.createElement("button");b.textContent=k[0];if(n==5&&k[0].length>2)b.style.fontSize="10px";if(k[2]=="AC"||k[2]=="DEL"){b.className="ac";b.style.fontSize="13px"}
  b.onpointerdown=e=>{e.preventDefault();const a=S.sh?k[3]:k[2];S.sh=0;if(a)press(a);else R()};w.appendChild(b);r.appendChild(w)});$("#kb").appendChild(r)});
 let SC=1;
 function fit(){const d=$("#d"),cs=getComputedStyle(document.documentElement),[W,H]=vw();d.style.transform="none";const a=H-parseFloat(cs.paddingTop)-parseFloat(cs.paddingBottom)-12;SC=Math.max(.2,Math.min(W/400,a/d.offsetHeight,1.6));d.style.transform="translateX(-50%) scale("+SC+")"}
