@@ -18,7 +18,7 @@ Máy tính Casio fx-880BTG PLUS mô phỏng bằng 1 file HTML, chạy được 
 
 ## Phím
 
-- **CALC** nằm bên phải phím phân số; **SHIFT + CALC** là **SOLVE**.
+- **CALC** nằm bên trái phím phân số; **SHIFT + CALC** là **SOLVE**.
 - **CATALOG** giữ Hằng số khoa học và Chuyển đổi đơn vị.
 
 ## Debug (Eruda)

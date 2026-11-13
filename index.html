@@ -324,7 +324,7 @@ T.forEach(k=>{const b=document.createElement("button");b.className="k"+(k[5]?" "
 {const p=document.createElement("button");p.className="k pill";p.style.left="313px";p.style.top="56px";p.innerHTML="▲<br>▼";
  p.onpointerdown=e=>{e.preventDefault();const r=p.getBoundingClientRect();press(e.clientY<r.top+r.height/2?"PU":"PD")};$("#t").appendChild(p)}
 // [label, gold, main, shift]
-const rows=[[6,[["□/□","a b/c","FRAC","MIX"],["CALC","SOLVE","CALC","SOLVE"],["√□","³√","i:√⦃⦄","i:³√⦃⦄"],["x■","x⁻¹","i:^⦃⦄","i:^⦃-1⦄"],["x²","log","i:^⦃2⦄","i:log("],["log□","ln","i:log(","i:ln("]]],
+const rows=[[6,[["CALC","SOLVE","CALC","SOLVE"],["□/□","a b/c","FRAC","MIX"],["√□","³√","i:√⦃⦄","i:³√⦃⦄"],["x■","x⁻¹","i:^⦃⦄","i:^⦃-1⦄"],["x²","log","i:^⦃2⦄","i:log("],["log□","ln","i:log(","i:ln("]]],
 [6,[["Ans","PreAns","i:Ans","i:PreAns"],["sin","sin⁻¹","i:sin(","i:asin("],["cos","cos⁻¹","i:cos(","i:acos("],["tan","tan⁻¹","i:tan(","i:atan("],["(","=","i:(","i:="],[")",",","i:)","i:,"]]],
 [5,[["7","π","i:7","i:π"],["8","e","i:8","i:e"],["9","i","i:9","i:i"],["DEL","INS","DEL"],["AC","OFF","AC","OFF"]]],
 [5,[["4","A","i:4","i:A"],["5","B","i:5","i:B"],["6","C","i:6","i:C"],["×","|□|","i:*","i:abs⦃⦄"],["÷","%","i:/","i:%"]]],
