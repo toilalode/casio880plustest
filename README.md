@@ -21,6 +21,11 @@ Máy tính Casio fx-880BTG PLUS mô phỏng bằng 1 file HTML, chạy được 
 - **CALC** nằm bên trái phím phân số; **SHIFT + CALC** là **SOLVE**.
 - **CATALOG** giữ Hằng số khoa học và Chuyển đổi đơn vị.
 
+## Ghi chú
+
+- Bấm phím **...** (TOOLS) → **Ghi chú** để mở ô gõ chữ bằng bàn phím điện thoại (gõ được tiếng Việt có dấu).
+- Nội dung tự lưu cùng cài đặt (khóa `casio880-state`), mở lại vẫn còn. **Xóa toàn bộ dữ liệu lưu** trong Storage sẽ xóa cả ghi chú.
+
 ## Debug (Eruda)
 
 Máy tải [Eruda](https://github.com/liriliri/eruda) (console, network, storage...) từ CDN và hiện nút bánh răng nổi trên màn hình. Mặc định **bật**; tắt/bật ở **Settings → Debug (Eruda)** (cũng được lưu). Cần mạng ở lần tải đầu, offline thì Eruda không hiện nhưng máy vẫn chạy bình thường.
